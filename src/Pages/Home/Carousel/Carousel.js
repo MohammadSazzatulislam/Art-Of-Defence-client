@@ -11,7 +11,7 @@ import "pure-react-carousel/dist/react-carousel.es.css";
 const carousel = () => {
   return (
     <div className="2xl:mx-auto 2xl:container flex justify-center">
-      <div className="2xl:px-20 w-full">
+      <div className="2xl:px-20 w-full h-fit ">
         {/* Carousel for Small-Sized Screen */}
         <CarouselProvider
           className="relative block sm:hidden"
@@ -50,25 +50,25 @@ const carousel = () => {
                 <div className="gallery-cell lg:mr-7 mr-6 lg:w-1/2 sm:w-96 w-full h-full">
                   <div className="relative w-full h-full lg:block hidden">
                     <img
-                      src="https://i.ibb.co/VSsN4Jt/carousel-2.png"
+                      src="https://wallpaperaccess.com/full/630676.jpg"
                       alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
+                    <div className="pl-6 pt-6 lg:pl-8 lg:pt-8 absolute left-5 top-48">
                       <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                        Lounge Interior
+                        WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS SCHOOL
                       </h1>
                     </div>
                   </div>
                   <div className="relative w-full h-full lg:hidden">
                     <img
-                      src="https://i.ibb.co/tMB5CZW/behzad-ghaffarian-nh-Wg-ZNV85-LQ-unsplash-1-3-1.png"
+                      src="https://wallpaperaccess.com/full/630676.jpg"
                       alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
+                    <div className="pl-6 pt-6 lg:pl-8 lg:pt-8 absolute left-5 top-48">
                       <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                        Lounge Interior
+                        WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS SCHOOL
                       </h1>
                     </div>
                   </div>
@@ -78,25 +78,26 @@ const carousel = () => {
                 <div className="gallery-cell lg:mr-7 mr-6 lg:w-1/2 sm:w-96 w-full h-full">
                   <div className="relative w-full h-full lg:block hidden">
                     <img
-                      src="https://i.ibb.co/phw8yGZ/sven-brandsma-Qz6-Zx4-Rjd-D8-unsplash-1.png"
-                      alt="chairs"
+                      src="https://img.freepik.com/free-photo/female-teenager-standing-stance-punching-studio_7502-4342.jpg?w=2000"
+                      alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
+                    <div className="pl-6 pt-6 lg:pl-8 lg:pt-8 absolute left-5 top-48">
                       <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                        Lounge Interior
+                        WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS SCHOOL
                       </h1>
                     </div>
                   </div>
                   <div className="relative w-full h-full lg:hidden">
                     <img
-                      src="https://i.ibb.co/g74VYR2/Group-46.png"
-                      alt="chairs"
+                      src="https://img.freepik.com/free-photo/female-teenager-standing-stance-punching-studio_7502-4342.jpg?w=2000"
+                      alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
+                    <div className="pl-6 pt-6 lg:pl-8 lg:pt-8 absolute left-5 top-48">
                       <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                        Lounge Interior
+                        WELCOME TO <br />
+                        KARATE AND MARTIAL <br /> ARTS SCHOOL
                       </h1>
                     </div>
                   </div>
@@ -106,25 +107,25 @@ const carousel = () => {
                 <div className="gallery-cell lg:mr-7 mr-6 lg:w-1/2 sm:w-96 w-full h-full">
                   <div className="relative w-full h-full lg:block hidden">
                     <img
-                      src="https://i.ibb.co/92ZYJyK/behzad-ghaffarian-nh-Wg-ZNV85-LQ-unsplash-1-1.png"
-                      alt="chair"
+                      src="https://img.freepik.com/free-photo/preschooler-boy-dressed-white-karate-kimono-with-orange-belt_613910-16.jpg?w=2000"
+                      alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
+                    <div className="pl-6 pt-6 lg:pl-8 lg:pt-8 absolute left-5 top-48">
                       <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                        Lounge Interior
+                        WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS SCHOOL
                       </h1>
                     </div>
                   </div>
                   <div className="relative w-full h-full lg:hidden">
                     <img
-                      src="https://i.ibb.co/372ryYP/sven-brandsma-Qz6-Zx4-Rjd-D8-unsplash-3-1.png"
-                      alt="chair"
+                      src="https://img.freepik.com/free-photo/preschooler-boy-dressed-white-karate-kimono-with-orange-belt_613910-16.jpg?w=2000"
+                      alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
+                    <div className="pl-6 pt-6 lg:pl-8 lg:pt-8 absolute left-5 top-48">
                       <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                        Lounge Interior
+                        WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS SCHOOL
                       </h1>
                     </div>
                   </div>
@@ -195,26 +196,34 @@ const carousel = () => {
                 <div className="gallery-cell w-full h-full">
                   <div className="relative w-full h-full lg:block hidden">
                     <img
-                      src="https://i.ibb.co/VSsN4Jt/carousel-2.png"
+                      src="https://wallpaperaccess.com/full/630676.jpg"
                       alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
+                    <div className="pl-6 pt-6 md:pt-8 md:pl-8 absolute left-0 top-0">
                       <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
                         Lounge Interior
                       </h1>
+                      <h2 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
+                        Karate is martial art and way of life that trains a
+                        practitioner to be peaceful.
+                      </h2>
                     </div>
                   </div>
                   <div className="relative w-full h-full lg:hidden">
                     <img
-                      src="https://i.ibb.co/tMB5CZW/behzad-ghaffarian-nh-Wg-ZNV85-LQ-unsplash-1-3-1.png"
+                      src="https://wallpaperaccess.com/full/630676.jpg"
                       alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
+                    <div className="pl-6 pt-6 md:pt-8 md:pl-8  absolute left-0 top-0">
                       <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
                         Lounge Interior
                       </h1>
+                      <h2 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
+                        Karate is martial art and way of life that trains a
+                        practitioner to be peaceful.
+                      </h2>
                     </div>
                   </div>
                 </div>
@@ -223,11 +232,11 @@ const carousel = () => {
                 <div className="gallery-cell w-full h-full">
                   <div className="relative w-full h-full lg:block hidden">
                     <img
-                      src="https://i.ibb.co/phw8yGZ/sven-brandsma-Qz6-Zx4-Rjd-D8-unsplash-1.png"
-                      alt="chairs"
+                      src="https://img.freepik.com/free-photo/female-teenager-standing-stance-punching-studio_7502-4342.jpg?w=2000"
+                      alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
+                    <div className="pl-6 pt-6 md:pt-8 md:pl-8 absolute left-0 top-0">
                       <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
                         Lounge Interior
                       </h1>
@@ -235,11 +244,11 @@ const carousel = () => {
                   </div>
                   <div className="relative w-full h-full lg:hidden">
                     <img
-                      src="https://i.ibb.co/g74VYR2/Group-46.png"
-                      alt="chairs"
+                      src="https://img.freepik.com/free-photo/female-teenager-standing-stance-punching-studio_7502-4342.jpg?w=2000"
+                      alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
+                    <div className="pl-6 pt-6 md:pt-8 md:pl-8  absolute left-0 top-0">
                       <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
                         Lounge Interior
                       </h1>
@@ -251,11 +260,11 @@ const carousel = () => {
                 <div className="gallery-cell w-full h-full">
                   <div className="relative w-full h-full lg:block hidden">
                     <img
-                      src="https://i.ibb.co/92ZYJyK/behzad-ghaffarian-nh-Wg-ZNV85-LQ-unsplash-1-1.png"
-                      alt="chair"
+                      src="https://img.freepik.com/free-photo/preschooler-boy-dressed-white-karate-kimono-with-orange-belt_613910-16.jpg?w=2000"
+                      alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
+                    <div className="pl-6 pt-6 md:pt-8 md:pl-8 absolute left-0 top-0">
                       <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
                         Lounge Interior
                       </h1>
@@ -263,11 +272,11 @@ const carousel = () => {
                   </div>
                   <div className="relative w-full h-full lg:hidden">
                     <img
-                      src="https://i.ibb.co/372ryYP/sven-brandsma-Qz6-Zx4-Rjd-D8-unsplash-3-1.png"
-                      alt="chair"
+                      src="https://img.freepik.com/free-photo/preschooler-boy-dressed-white-karate-kimono-with-orange-belt_613910-16.jpg?w=2000"
+                      alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="pl-6 pb-6 lg:pl-8 lg:pb-8 absolute left-0 bottom-0">
+                    <div className="pl-6 pt-6 md:pt-8 md:pl-8  absolute left-0 top-0">
                       <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
                         Lounge Interior
                       </h1>
@@ -301,7 +310,6 @@ const carousel = () => {
           </div>
         </CarouselProvider>
       </div>
-      
     </div>
   );
 };
