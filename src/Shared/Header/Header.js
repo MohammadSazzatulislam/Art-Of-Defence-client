@@ -28,7 +28,7 @@ const Header = () => {
         <div className=" flex justify-between items-center ">
           <div className=" flex space-x-3 items-center">
             <img
-              className="w-16 p-0 m-0 border rounded-full"
+              className="w-16 p-0 m-0 rounded-full"
               src={logo}
               alt=""
             />
@@ -65,11 +65,7 @@ const Header = () => {
               </>
             ) : (
               <>
-                <Link to="signup">
-                  <button className="rounded-md flex space-x-2 w-24 h-10 font-normal text-sm leading-3 text-indigo-700 bg-white border border-indigo-700 focus:outline-none focus:bg-gray-200 hover:bg-gray-200 duration-150 justify-center items-center">
-                    Sign Up
-                  </button>
-                </Link>
+               
                 <Link to="/signin">
                   <button className="rounded-md flex space-x-2 w-24 h-10 font-normal text-sm leading-3 text-white bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:bg-indigo-600 hover:bg-indigo-600 duration-150 justify-center items-center">
                     Sign In
@@ -173,11 +169,7 @@ const Header = () => {
               </>
             ) : (
               <>
-                <Link to="/signup">
-                  <button className="rounded-md flex space-x-2 w-20 h-10 font-normal text-sm leading-3 text-indigo-700 bg-indigo-600 bg-opacity-0 hover:opacity-100 border border-indigo-700 focus:outline-none focus:bg-gray-200 hover:bg-gray-200 duration-150 justify-center items-center">
-                    Sign Up
-                  </button>
-                </Link>
+                
                 <Link to="/signin">
                   <button className="rounded-md flex space-x-2 w-20 h-10 font-normal text-sm leading-3 text-white bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:bg-indigo-600 hover:bg-indigo-600 duration-150 justify-center items-center">
                     Sign In
