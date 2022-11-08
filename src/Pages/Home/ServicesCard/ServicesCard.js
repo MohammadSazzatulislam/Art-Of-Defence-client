@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Card from './Card';
+import { Link } from 'react-router-dom';
+
 
 const ServicesCard = () => {
     const [services, setServices] = useState([])
@@ -21,7 +23,9 @@ const ServicesCard = () => {
           ))}
         </div>
         <div className="text-end pt-5 mr-32">
-          <button>sell all</button>
+          <Link to='/servicess'>
+            <button>sell all</button>
+          </Link>
         </div>
       </div>
     );

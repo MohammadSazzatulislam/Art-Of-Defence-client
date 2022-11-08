@@ -4,28 +4,34 @@ import Main from "../../Layout/Main";
 import Home from "../../Pages/Home/Home";
 import SignIn from "../../Pages/SignIn/SignIn";
 import SignUp from "../../Pages/SignUp/SignUp";
+import AllServicess from "../../Pages/AllServicess/AllServicess";
 
 
 const router = createBrowserRouter([
-    {
-        path: '/',
-        errorElement:<ErrorPage></ErrorPage>,
-        element: <Main></Main>,
-        children: [
-            {
-                path: '/',
-                element: <Home></Home>,
-            },
-            {
-                path: '/signin',
-                element: <SignIn></SignIn>,
-            },
-            {
-                path: '/signup',
-                element:<SignUp></SignUp>,
-            }
-        ]
-    }
+  {
+    path: "/",
+    errorElement: <ErrorPage></ErrorPage>,
+    element: <Main></Main>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/signin",
+        element: <SignIn></SignIn>,
+      },
+      {
+        path: "/signup",
+        element: <SignUp></SignUp>,
+      },
+      {
+        path: "/servicess",
+        loader: ()=> fetch('http://localhost:5000/service'),
+        element: <AllServicess></AllServicess>,
+      },
+    ],
+  },
 ]);
 
 

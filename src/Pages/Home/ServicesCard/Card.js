@@ -18,6 +18,13 @@ const Card = ({ service }) => {
             </p>
           </div>
         </div>
+        {/* <div className="w-full h-9 mx-auto">
+          <button className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 hover:bg-gray-100 w-full h-full py-3 px-20 bg-blue-100 border rounded border-gray-200">
+            <p className="text-sm font-medium leading-none text-gray-600">
+              Details
+            </p>
+          </button>
+        </div> */}
       </div>
     </div>
   );
