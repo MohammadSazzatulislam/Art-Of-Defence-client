@@ -21,7 +21,7 @@ const Header = () => {
           </div>
 
           <div className="hidden   sm:flex flex-row items-center space-x-6">
-            <Link>Home</Link>
+            <Link to='/'>Home</Link>
             <Link>Services</Link>
             <Link>Blog</Link>
             <Link>My Reviews</Link>
@@ -108,7 +108,7 @@ const Header = () => {
           className={`${show ? "block" : "hidden"} sm:hidden mt-4 mx-auto`}
         >
           <div className="flex flex-col justify-center space-y-6">
-            <Link>Home</Link>
+            <Link to='/'>Home</Link>
             <Link>Services</Link>
             <Link>Blog</Link>
             <Link>My Reviews</Link>

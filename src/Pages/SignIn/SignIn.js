@@ -4,8 +4,15 @@ import { Link } from 'react-router-dom';
 const SignIn = () => {
     return (
       <div className="h-full w-full py-10 px-4">
-        <div className="flex  flex-col items-center justify-center">
-          <div className="bg-white shadow-2xl border border-blue-500 rounded lg:w-1/3  md:w-1/2 w-full p-10">
+        <div className="flex gap-5 lg:flex-row md:flex-row flex-col items-center justify-center">
+          <div className='bg-white lg:w-1/2  md:w-1/2 w-full '  >
+            <img
+              className="w-full h-fit"
+              src="https://img.freepik.com/premium-vector/online-registration-sign-up-with-man-sitting-near-smartphone_268404-95.jpg?w=2000"
+              alt=""
+            />
+          </div>
+          <div className="bg-white shadow-2xl  rounded lg:w-1/3  md:w-1/2 w-full p-10">
             <p className="text-2xl font-extrabold leading-6 text-gray-800">
               Sign In to your account
             </p>
@@ -55,7 +62,7 @@ const SignIn = () => {
               </div>
               <p className="text-sm mt-4 font-medium leading-none text-gray-500">
                 Don't have account?
-                <Link to='/signup'>
+                <Link to="/signup">
                   <span
                     tabIndex={0}
                     role="link"
