@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const AllServiceCard = ({ card }) => {
-  const { name, img, details } = card;
+  const { name, img, details, _id } = card;
   return (
     <div className="w-80 p-4  rounded border hover:shadow-lg">
       <div className="flex justify-center items-center flex-col ">
@@ -16,11 +17,13 @@ const AllServiceCard = ({ card }) => {
         </div>
       </div>
       <div className="w-full h-9 mx-auto">
-        <button className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 hover:bg-gray-100 w-full h-full py-3 px-20 bg-blue-100 border rounded border-gray-200">
-          <p className="text-sm font-medium leading-none text-gray-600">
-            Details
-          </p>
-        </button>
+        <Link to={`/details/${_id}`}>
+          <button className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 hover:bg-gray-100 w-full h-full py-3 px-20 bg-blue-100 border rounded border-gray-200">
+            <p className="text-sm font-medium leading-none text-gray-600">
+              Details
+            </p>
+          </button>
+        </Link>
       </div>
     </div>
   );
