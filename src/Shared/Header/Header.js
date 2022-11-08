@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../Context/AuthContext/AuthContext";
 import logo from "../../images/logo.jpg";
 
 const Header = () => {
   const [show, setshow] = useState(false);
+
+  const { user } = useContext(UserContext);
+
   return (
     <div className=" bg-white ">
       <nav className="2xl:container 2xl:mx-auto sm:py-6 sm:px-7 py-5 px-4">
@@ -21,7 +25,7 @@ const Header = () => {
           </div>
 
           <div className="hidden   sm:flex flex-row items-center space-x-6">
-            <Link to='/'>Home</Link>
+            <Link to="/">Home</Link>
             <Link>Services</Link>
             <Link>Blog</Link>
             <Link>My Reviews</Link>
@@ -33,7 +37,7 @@ const Header = () => {
                 Sign Up
               </button>
             </Link>
-            <Link to='/signin'>
+            <Link to="/signin">
               <button className="rounded-md flex space-x-2 w-24 h-10 font-normal text-sm leading-3 text-white bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:bg-indigo-600 hover:bg-indigo-600 duration-150 justify-center items-center">
                 Sign In
               </button>
@@ -108,22 +112,37 @@ const Header = () => {
           className={`${show ? "block" : "hidden"} sm:hidden mt-4 mx-auto`}
         >
           <div className="flex flex-col justify-center space-y-6">
-            <Link to='/'>Home</Link>
+            <Link to="/">Home</Link>
             <Link>Services</Link>
             <Link>Blog</Link>
             <Link>My Reviews</Link>
           </div>
           <div className="flex flex-col gap-4 mt-4 w-80 mx-auto ">
-            <Link to="/signup">
-              <button className="rounded-md flex space-x-2 w-full h-10 font-normal text-sm leading-3 text-indigo-700 bg-indigo-600 bg-opacity-0 hover:opacity-100 border border-indigo-700 focus:outline-none focus:bg-gray-200 hover:bg-gray-200 duration-150 justify-center items-center">
-                Sign Up
-              </button>
-            </Link>
-            <Link to="/signin">
-              <button className="rounded-md flex space-x-2 w-full h-10 font-normal text-sm leading-3 text-white bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:bg-indigo-600 hover:bg-indigo-600 duration-150 justify-center items-center">
-                Sign In
-              </button>
-            </Link>
+            {user?.uid ? (
+              <>
+                <div className="w-28 rounded-full border">
+                  <img src="" alt="" />
+                </div>
+                <Link>
+                  <button className="rounded-md flex space-x-2 w-full h-10 font-normal text-sm leading-3 text-indigo-700 bg-indigo-600 bg-opacity-0 hover:opacity-100 border border-indigo-700 focus:outline-none focus:bg-gray-200 hover:bg-gray-200 duration-150 justify-center items-center">
+                    Log Out
+                  </button>
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link to="/signup">
+                  <button className="rounded-md flex space-x-2 w-full h-10 font-normal text-sm leading-3 text-indigo-700 bg-indigo-600 bg-opacity-0 hover:opacity-100 border border-indigo-700 focus:outline-none focus:bg-gray-200 hover:bg-gray-200 duration-150 justify-center items-center">
+                    Sign Up
+                  </button>
+                </Link>
+                <Link to="/signin">
+                  <button className="rounded-md flex space-x-2 w-full h-10 font-normal text-sm leading-3 text-white bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:bg-indigo-600 hover:bg-indigo-600 duration-150 justify-center items-center">
+                    Sign In
+                  </button>
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </nav>
