@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { UserContext } from "../../Context/AuthContext/AuthContext";
 import { Link } from "react-router-dom";
@@ -6,7 +6,44 @@ import { Link } from "react-router-dom";
 const Details = () => {
   const { user } = useContext(UserContext);
 
-  const { name, details, img, price, category } = useLoaderData();
+  const { _id,  name, details, img, price, category } = useLoaderData();
+
+  const [reviews, setReviews] = useState(user);
+  
+  const userReview = {
+    reviewId: _id,
+    name: reviews.name,
+    email: reviews.email,
+    description: reviews.description,
+    photoURL:user.photoURL
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault()
+
+console.log(reviews)
+
+    fetch("http://localhost:5000/reviews", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(userReview),
+    });
+
+
+    e.target.reset()
+  }
+
+  const handleBlur = event => {
+    const name = event.target.name
+    const field = event.target.value
+    const newReviews = { ...reviews }
+    newReviews[name] =field
+    setReviews(newReviews);
+}
+
+
 
   return (
     <div>
@@ -88,7 +125,7 @@ const Details = () => {
       {/* review form section */}
       {user?.uid && (
         <div>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="bg-gray-300 mx-auto w-1/2 mb-5 h-1"></div>
             <div className="lg:w-4/5 md:w-4/5 w-full p-2 mx-auto gap-3 flex ">
               <div className="lg:w-1/2 w-full mx-auto">
@@ -96,7 +133,9 @@ const Details = () => {
                   Name
                 </label>
                 <input
-                  type="name"
+                  onBlur={handleBlur}
+                  name="name"
+                  type="text"
                   tabindex="0"
                   className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800"
                   aria-labelledby="firstName"
@@ -111,7 +150,8 @@ const Details = () => {
                   Your Email
                 </label>
                 <input
-                  type="email"
+                  type="text"
+                  defaultValue={user?.email}
                   readOnly
                   tabindex="0"
                   className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800"
@@ -129,7 +169,8 @@ const Details = () => {
               </label>
               <textarea
                 className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800"
-                name=""
+                onBlur={handleBlur}
+                name="description"
                 id=""
                 cols="30"
                 rows="6"
