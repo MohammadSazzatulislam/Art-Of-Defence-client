@@ -82,7 +82,7 @@ const carousel = () => {
                       alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="pl-6 pt-6 lg:pl-8 lg:pt-8 absolute left-5 top-48">
+                    <div className="pl-6 pt-6 lg:pl-8 lg:pt-8 absolute left-5 top-12">
                       <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
                         WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS SCHOOL
                       </h1>
@@ -94,7 +94,7 @@ const carousel = () => {
                       alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="pl-6 pt-6 lg:pl-8 lg:pt-8 absolute left-5 top-48">
+                    <div className="pl-6 pt-6 lg:pl-8 lg:pt-8 absolute left-5 top-12">
                       <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
                         WELCOME TO <br />
                         KARATE AND MARTIAL <br /> ARTS SCHOOL
@@ -172,7 +172,7 @@ const carousel = () => {
             <ButtonBack
               role="button"
               aria-label="slide backward"
-              className="w-12 h-12 md:w-14 md:h-14 rounded-full flex justify-center items-center bg-white border border-gray-300 hover:bg-gray-400 absolute z-30 left-0 ml-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
+              className="w-12 h-12 md:w-14 md:h-14 rounded-full flex justify-center items-center bg-gray-300 border border-gray-300 hover:bg-gray-400 absolute z-30 left-0 ml-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
               id="prev"
             >
               <svg
@@ -200,13 +200,13 @@ const carousel = () => {
                       alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="pl-6 pt-6 md:pt-8 md:pl-8 absolute left-0 top-0">
-                      <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                        Lounge Interior
+                    <div className="pl-6 pt-6 md:-pt-5  md:pl-8 absolute left-5 top-32">
+                      <h1 className=" md:text-2xl lg:text-5xl  font-medium text-white">
+                        WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS SCHOOL
                       </h1>
-                      <h2 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                        Karate is martial art and way of life that trains a
-                        practitioner to be peaceful.
+                      <h2 className=" md:text-sm lg:text-lg mt-5 lg:leading-normal font-medium text-white">
+                        Karate is martial art and way of life that <br /> trains
+                        a practitioner to be peaceful.
                       </h2>
                     </div>
                   </div>
@@ -216,13 +216,13 @@ const carousel = () => {
                       alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="pl-6 pt-6 md:pt-8 md:pl-8  absolute left-0 top-0">
-                      <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                        Lounge Interior
+                    <div className="pl-6 pt-6 md:pt-12 md:pl-8 absolute left-5 top-32">
+                      <h1 className="md:text-2xl lg:text-5xl  font-medium text-white">
+                        WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS SCHOOL
                       </h1>
-                      <h2 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                        Karate is martial art and way of life that trains a
-                        practitioner to be peaceful.
+                      <h2 className=" md:text-sm lg:text-lg mt-5 lg:leading-normal font-medium text-white">
+                        Karate is martial art and way of life that <br /> trains
+                        a practitioner to be peaceful.
                       </h2>
                     </div>
                   </div>
@@ -236,10 +236,14 @@ const carousel = () => {
                       alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="pl-6 pt-6 md:pt-8 md:pl-8 absolute left-0 top-0">
-                      <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                        Lounge Interior
+                    <div className="pl-6 pt-6 md:pt-12 md:pl-8 absolute left-5 top-32">
+                      <h1 className="md:text-2xl lg:text-5xl  font-medium text-white">
+                        WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS SCHOOL
                       </h1>
+                      <h2 className=" md:text-sm lg:text-lg mt-5 lg:leading-normal font-medium text-white">
+                        Karate is martial art and way of life that <br /> trains
+                        a practitioner to be peaceful.
+                      </h2>
                     </div>
                   </div>
                   <div className="relative w-full h-full lg:hidden">
@@ -248,10 +252,14 @@ const carousel = () => {
                       alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="pl-6 pt-6 md:pt-8 md:pl-8  absolute left-0 top-0">
-                      <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                        Lounge Interior
+                    <div className="pl-6 pt-6 md:pt-12 md:pl-8 absolute left-5 top-32">
+                      <h1 className="md:text-2xl lg:text-5xl  font-medium text-white">
+                        WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS SCHOOL
                       </h1>
+                      <h2 className=" md:text-sm lg:text-lg mt-5 lg:leading-normal font-medium text-white">
+                        Karate is martial art and way of life that <br /> trains
+                        a practitioner to be peaceful.
+                      </h2>
                     </div>
                   </div>
                 </div>
@@ -264,10 +272,14 @@ const carousel = () => {
                       alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="pl-6 pt-6 md:pt-8 md:pl-8 absolute left-0 top-0">
-                      <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                        Lounge Interior
+                    <div className="pl-6 pt-6 md:pt-12 md:pl-8 absolute left-5 top-32">
+                      <h1 className="md:text-2xl lg:text-5xl  font-medium text-white">
+                        WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS SCHOOL
                       </h1>
+                      <h2 className=" md:text-sm lg:text-lg mt-5 lg:leading-normal font-medium text-white">
+                        Karate is martial art and way of life that <br /> trains
+                        a practitioner to be peaceful.
+                      </h2>
                     </div>
                   </div>
                   <div className="relative w-full h-full lg:hidden">
@@ -276,10 +288,14 @@ const carousel = () => {
                       alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="pl-6 pt-6 md:pt-8 md:pl-8  absolute left-0 top-0">
-                      <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                        Lounge Interior
+                    <div className="pl-6 pt-6 md:pt-12 md:pl-8 absolute left-5 top-32">
+                      <h1 className="md:text-2xl lg:text-5xl  font-medium text-white">
+                        WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS SCHOOL
                       </h1>
+                      <h2 className=" md:text-sm lg:text-lg mt-5 lg:leading-normal font-medium text-white">
+                        Karate is martial art and way of life that <br /> trains
+                        a practitioner to be peaceful.
+                      </h2>
                     </div>
                   </div>
                 </div>
@@ -288,7 +304,7 @@ const carousel = () => {
             <ButtonNext
               role="button"
               aria-label="slide forward"
-              className="w-12 h-12 md:w-14 md:h-14 rounded-full flex justify-center items-center bg-white border border-gray-300 hover:bg-gray-400 absolute z-30 right-0 mr-8 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
+              className="w-12 h-12 md:w-14 md:h-14 rounded-full flex justify-center items-center bg-gray-300 border border-gray-300 hover:bg-gray-400 absolute z-30 right-0 mr-8 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800"
               id="next"
             >
               <svg
