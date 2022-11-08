@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../Context/AuthContext/AuthContext";
 import logo from "../../images/logo.jpg";
+import { FaUser } from "react-icons/fa";
+
 
 const Header = () => {
   const [show, setshow] = useState(false);
