@@ -7,7 +7,7 @@ import AllReviews from "./AllReviews/AllReviews";
 const Details = () => {
   const { user } = useContext(UserContext);
 
-  const { _id,  name, details, img, price, category } = useLoaderData();
+  const { _id,  name, details, img, price,  } = useLoaderData();
 
   const [reviews, setReviews] = useState(user);
   const [allReviews, setAllReviews] = useState([])
@@ -72,8 +72,28 @@ const Details = () => {
             <h2 className="font-semibold lg:text-xl text-lg lg:leading-9 leading-7 text-gray-800 mt-4">
               {details}
             </h2>
-            <div className="flex justify-center items-center gap-2">
-              <img className="w-28 rounded" src="https://static.wikia.nocookie.net/character-stats-and-profiles/images/5/51/Martial-arts-21.jpg/revision/latest/scale-to-width-down/640?cb=20170531073216" alt="" />
+            <div className="flex justify-around items-center gap-2">
+              <img
+                className="w-28 rounded"
+                src="https://st3.depositphotos.com/3917667/18387/i/600/depositphotos_183874886-stock-photo-the-studio-shot-of-group.jpg"
+                alt=""
+              />
+              <img
+                className="w-28 rounded"
+                src="https://st3.depositphotos.com/3917667/18387/i/600/depositphotos_183874886-stock-photo-the-studio-shot-of-group.jpg"
+                alt=""
+              />
+              <img
+                className="w-28 rounded"
+                src="https://st3.depositphotos.com/3917667/18387/i/600/depositphotos_183874886-stock-photo-the-studio-shot-of-group.jpg"
+                alt=""
+              />
+              <img
+                className="w-28 rounded"
+                src="https://st3.depositphotos.com/3917667/18387/i/600/depositphotos_183874886-stock-photo-the-studio-shot-of-group.jpg"
+                alt=""
+              />
+              
 
               {/* {category.map((detail, _index) => (
                 <ul className="list-disc pl-7" key={_index}>
