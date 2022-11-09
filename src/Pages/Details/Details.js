@@ -1,7 +1,8 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { UserContext } from "../../Context/AuthContext/AuthContext";
 import { Link } from "react-router-dom";
+import AllReviews from "./AllReviews/AllReviews";
 
 const Details = () => {
   const { user } = useContext(UserContext);
@@ -9,19 +10,34 @@ const Details = () => {
   const { _id,  name, details, img, price, category } = useLoaderData();
 
   const [reviews, setReviews] = useState(user);
+  const [allReviews, setAllReviews] = useState([])
+  
+  useEffect(() => {
+    fetch(`http://localhost:5000/reviews?name=${name}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setAllReviews(data);
+      })
+      .catch((err) => console.log(err));
+  }, [name, allReviews]);
+
+
+
+
   
   const userReview = {
     reviewId: _id,
-    name: reviews.name,
-    email: reviews.email,
+    name,
+    username: reviews.name,
+    email: user?.email,
     description: reviews.description,
-    photoURL:user.photoURL
+    photoURL:user?.photoURL
   };
 
   const handleSubmit = e => {
     e.preventDefault()
 
-console.log(reviews)
+      console.log(reviews)
 
     fetch("http://localhost:5000/reviews", {
       method: "POST",
@@ -93,35 +109,18 @@ console.log(reviews)
         ) : (
           <Link to="/signin">
             <h2 className="font-semibold hover:underline">
-              Please login to add a review{" "}
+              Please login to add a review
             </h2>
           </Link>
         )}
       </div>
 
       <div className="grid lg:grid-cols-4 gap-5 p-5 mb-5 md:grid-cols-3 gird-cols-1 mx-auto items-center justify-center ">
-        <div className="w-full flex items-center justify-center">
-          <div className=" w-full hover:shadow-2xl flex flex-col items-center py-8 px-5 bg-gray-100 rounded-md">
-            <div className="w-full flex items-center justify-center">
-              <div className="flex flex-col items-center">
-                <img
-                  src="https://cdn.tuk.dev/assets/templates/olympus/profile.png"
-                  alt="profile"
-                />
-                <p className="mt-2 text-xs sm:text-sm md:text-base font-semibold text-center">
-                  Ricardo Boveta
-                </p>
-              </div>
-            </div>
-            <div className="mt-3">
-              <p className=" font-semibold ">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam,
-                alias.
-              </p>
-            </div>
-          </div>
-        </div>
+        {allReviews.map((rev) => (
+          <AllReviews key={rev._id} reviews={rev}></AllReviews>
+        ))}
       </div>
+
       {/* review form section */}
       {user?.uid && (
         <div>
@@ -133,6 +132,7 @@ console.log(reviews)
                   Name
                 </label>
                 <input
+                  required
                   onBlur={handleBlur}
                   name="name"
                   type="text"
@@ -168,6 +168,7 @@ console.log(reviews)
                 Description
               </label>
               <textarea
+                required
                 className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800"
                 onBlur={handleBlur}
                 name="description"
