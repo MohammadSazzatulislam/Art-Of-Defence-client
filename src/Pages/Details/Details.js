@@ -25,6 +25,8 @@ const Details = () => {
   const userReview = {
     reviewId: _id,
     name,
+    img,
+    price,
     username: reviews?.name,
     email: user?.email,
     description: reviews?.description,
