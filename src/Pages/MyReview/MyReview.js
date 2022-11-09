@@ -6,15 +6,33 @@ const MyReview = () => {
   const { user } = useContext(UserContext);
   const [userReview, setUserReview] = useState([]);
 
-
   useEffect(() => {
     fetch(`http://localhost:5000/review?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
-       setUserReview(data);
+        setUserReview(data);
       })
       .catch((err) => console.log(err));
   }, [user?.email]);
+
+    const handleDelete = (id) => {
+        const agree = window.confirm('are your sure delete!!')
+        if (agree) {
+        fetch(`http://localhost:5000/reviews/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+              if (data.deletedCount) {
+                  alert('successfully delete')
+                  const remaining = userReview.filter(usr => usr._id !== id)
+                 setUserReview(remaining)
+            } 
+          })
+          .catch((err) => console.log(err));
+      }
+    
+  };
 
   return (
     <div className="py-10 px-4 md:px-6 2xl:px-20 2xl:container 2xl:mx-auto">
@@ -23,7 +41,11 @@ const MyReview = () => {
           <div className="flex flex-col justify-start items-start bg-gray-50 px-4 py-4 md:py-6 md:p-6 xl:p-8 w-full">
             {/* user reviews */}
             {userReview.map((rev) => (
-              <Reviews key={rev._id} review={rev}></Reviews>
+              <Reviews
+                key={rev._id}
+                review={rev}
+                handleDelete={handleDelete}
+              ></Reviews>
             ))}
             {/* user reviews */}
           </div>
