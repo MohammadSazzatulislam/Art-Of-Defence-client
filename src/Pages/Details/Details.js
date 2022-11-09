@@ -72,12 +72,14 @@ const Details = () => {
             <h2 className="font-semibold lg:text-xl text-lg lg:leading-9 leading-7 text-gray-800 mt-4">
               {details}
             </h2>
-            <div className=" text-md font-semibold lg:text-md leading-6  mt-4">
-              {category.map((detail, _index) => (
+            <div className="flex justify-center items-center gap-2">
+              <img className="w-28 rounded" src="https://static.wikia.nocookie.net/character-stats-and-profiles/images/5/51/Martial-arts-21.jpg/revision/latest/scale-to-width-down/640?cb=20170531073216" alt="" />
+
+              {/* {category.map((detail, _index) => (
                 <ul className="list-disc pl-7" key={_index}>
                   <li> {detail}</li>
                 </ul>
-              ))}
+              ))} */}
             </div>
 
             <p className=" flex gap-3 items-center font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 mt-6 ">
@@ -101,12 +103,15 @@ const Details = () => {
           Reviews
         </h1>
         {user?.uid ? (
-          <h3 className="font-bold text-yellow-600 pr-5 italic text-md">
+          <a
+            href="#reviewSubmitFrom"
+            className="font-bold text-yellow-600 pr-5 italic text-md"
+          >
             Add Review
-          </h3>
+          </a>
         ) : (
           <Link to="/signin">
-            <h2 className="font-semibold hover:underline">
+            <h2 className="font-semibold hover:underline text-blue-600">
               Please login to add a review
             </h2>
           </Link>
@@ -115,7 +120,7 @@ const Details = () => {
 
       <div className="grid lg:grid-cols-4 gap-5 p-5 mb-5 md:grid-cols-3 gird-cols-1 mx-auto items-center justify-center ">
         {allReviews?.length === 0 ? (
-          <p className="text-md font-semibold italic text-muited">
+          <p className="text-md font-semibold italic text-gray-500">
             No review available
           </p>
         ) : (
@@ -130,7 +135,7 @@ const Details = () => {
       {/* review form section */}
       {user?.uid && (
         <div>
-          <form onSubmit={handleSubmit}>
+          <form id="reviewSubmitFrom" onSubmit={handleSubmit}>
             <div className="bg-gray-300 mx-auto w-1/2 mb-5 h-1"></div>
             <div className="lg:w-4/5 md:w-4/5 w-full p-2 mx-auto gap-3 flex ">
               <div className="lg:w-1/2 w-full mx-auto">

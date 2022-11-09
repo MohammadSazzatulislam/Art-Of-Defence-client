@@ -4,23 +4,19 @@ import { UserContext } from "../../Context/AuthContext/AuthContext";
 import logo from "../../images/logo.jpg";
 import { FaUser } from "react-icons/fa";
 
-
 const Header = () => {
   const [show, setshow] = useState(false);
 
-  const { user, signOutUser } = useContext(UserContext);
-  console.log(user);
+  const { user, signOutUser} = useContext(UserContext);
 
-
-    const handleLogOut =()=>{
-        signOutUser()
-          .then(() => {
-            // Sign-out successful.
-          })
-          .catch((error) => {
-            // An error happened.
-          });
-    }
+  const handleLogOut = () => {
+    signOutUser()
+      .then(() => {
+      })
+      .catch((error) => {
+        // An error happened.
+      });
+  };
 
   return (
     <div className=" bg-white ">
@@ -39,7 +35,7 @@ const Header = () => {
             <Link>Blog</Link>
             {user?.uid && (
               <>
-                <Link> Add Service</Link>
+                <Link to="/addService"> Add Service</Link>
                 <Link to="/myReview">My Reviews</Link>
               </>
             )}
@@ -55,7 +51,7 @@ const Header = () => {
                     alt=""
                   />
                 </div>
-                <Link>
+                <Link to="/">
                   <button
                     onClick={handleLogOut}
                     className="rounded-md flex space-x-2 w-24 h-10 font-normal text-sm leading-3 text-indigo-700 bg-white border border-indigo-700 focus:outline-none focus:bg-gray-200 hover:bg-gray-200 duration-150 justify-center items-center"
@@ -147,7 +143,7 @@ const Header = () => {
             <Link>Blog</Link>
             {user?.uid && (
               <>
-                <Link> Add Service</Link>
+                <Link to="/addService"> Add Service</Link>
                 <Link to="/myReview">My Reviews</Link>
               </>
             )}
@@ -162,7 +158,7 @@ const Header = () => {
                     alt=""
                   />
                 </div>
-                <Link>
+                <Link to="/">
                   <button
                     onClick={handleLogOut}
                     className="rounded-md flex space-x-2 w-20 h-10 font-normal text-sm leading-3 text-indigo-700 bg-indigo-600 bg-opacity-0 hover:opacity-100 border border-indigo-700 focus:outline-none focus:bg-gray-200 hover:bg-gray-200 duration-150 justify-center items-center"

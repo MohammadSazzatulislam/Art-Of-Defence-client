@@ -1,7 +1,7 @@
 import React from "react";
+import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 
 const Reviews = ({ review, handleDelete }) => {
-
   const { _id, img, name, username, description } = review;
 
   return (
@@ -12,16 +12,21 @@ const Reviews = ({ review, handleDelete }) => {
       </div>
       <div className=" md:flex-row flex-col flex justify-between items-start w-full  pb-8 space-y-4 md:space-y-0">
         <div className="w-full flex flex-col justify-start items-start space-y-4">
-          <h3 className="text-xl xl:text-2xl font-semibold leading-2 pt-3 text-gray-800">
+          <h3 className="text-xl xl:text-2xl font-semibold leading-2 pt-3 text-black">
             {name}
           </h3>
           <div className="flex justify-start items-start flex-col space-y-2">
             <p className="text-sm leading-none  text-gray-800">
-              <span className="text-gray-400 font-semibold">By</span>:{" "}
+              <span className="text-black font-bold">By</span> :{" "}
               {username}
             </p>
-            <p className="text-sm leading-none  text-gray-800">
-              Raiting : 4.5/5 Star
+            <p className="text-sm leading-none flex gap-2 items-center text-yellow-500  text-gray-800">
+              <span className="text-black font-bold">Raiting :</span>
+              <FaStar></FaStar>
+              <FaStar></FaStar>
+              <FaStar></FaStar>
+              <FaStar></FaStar>
+              <FaStarHalfAlt></FaStarHalfAlt>
             </p>
             <p className="text-sm leading-none  text-gray-800">{description}</p>
           </div>
@@ -31,7 +36,7 @@ const Reviews = ({ review, handleDelete }) => {
             Edit
           </button>
           <button
-            onClick={()=> handleDelete(_id)}
+            onClick={() => handleDelete(_id)}
             className="text-base xl:text-lg font-semibold leading-6 text-gray-800"
           >
             Delete

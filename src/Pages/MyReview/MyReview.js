@@ -40,13 +40,22 @@ const MyReview = () => {
         <div className="flex flex-col justify-start items-start w-full space-y-4 md:space-y-6 xl:space-y-8">
           <div className="flex flex-col justify-start items-start bg-gray-50 px-4 py-4 md:py-6 md:p-6 xl:p-8 w-full">
             {/* user reviews */}
-            {userReview.map((rev) => (
-              <Reviews
-                key={rev._id}
-                review={rev}
-                handleDelete={handleDelete}
-              ></Reviews>
-            ))}
+            {userReview.length === 0 ? (
+              <p className="text-md font-semibold italic text-gray-400">
+                No reviews were added
+              </p>
+            ) : (
+              <>
+                {userReview.map((rev) => (
+                  <Reviews
+                    key={rev._id}
+                    review={rev}
+                    handleDelete={handleDelete}
+                  ></Reviews>
+                ))}
+              </>
+            )}
+
             {/* user reviews */}
           </div>
         </div>
