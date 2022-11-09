@@ -9,6 +9,7 @@ const Header = () => {
   const [show, setshow] = useState(false);
 
   const { user, signOutUser } = useContext(UserContext);
+  console.log(user);
 
 
     const handleLogOut =()=>{
@@ -27,11 +28,7 @@ const Header = () => {
         {/* For large and Medium-sized Screen */}
         <div className=" flex justify-between items-center ">
           <div className=" flex space-x-3 items-center">
-            <img
-              className="w-16 p-0 m-0 rounded-full"
-              src={logo}
-              alt=""
-            />
+            <img className="w-16 p-0 m-0 rounded-full" src={logo} alt="" />
             <h1 className=" font-semibold text-2xl leading-6 text-gray-800">
               Art Of Defensee
             </h1>
@@ -39,9 +36,13 @@ const Header = () => {
 
           <div className="hidden   sm:flex flex-row items-center space-x-6">
             <Link to="/">Home</Link>
-            <Link>Services</Link>
             <Link>Blog</Link>
-            <Link>My Reviews</Link>
+            {user?.uid && (
+              <>
+                <Link> Add Service</Link>
+                <Link to="/myReview">My Reviews</Link>
+              </>
+            )}
           </div>
 
           <div className="hidden sm:flex flex-row justify-center items-center space-x-4">
@@ -65,7 +66,6 @@ const Header = () => {
               </>
             ) : (
               <>
-               
                 <Link to="/signin">
                   <button className="rounded-md flex space-x-2 w-24 h-10 font-normal text-sm leading-3 text-white bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:bg-indigo-600 hover:bg-indigo-600 duration-150 justify-center items-center">
                     Sign In
@@ -144,9 +144,13 @@ const Header = () => {
         >
           <div className="flex flex-col justify-center space-y-6">
             <Link to="/">Home</Link>
-            <Link>Services</Link>
             <Link>Blog</Link>
-            <Link>My Reviews</Link>
+            {user?.uid && (
+              <>
+                <Link> Add Service</Link>
+                <Link to="/myReview">My Reviews</Link>
+              </>
+            )}
           </div>
           <div className="flex flex-col gap-4 mt-4 w-80  ">
             {user?.uid ? (
@@ -169,7 +173,6 @@ const Header = () => {
               </>
             ) : (
               <>
-                
                 <Link to="/signin">
                   <button className="rounded-md flex space-x-2 w-20 h-10 font-normal text-sm leading-3 text-white bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:bg-indigo-600 hover:bg-indigo-600 duration-150 justify-center items-center">
                     Sign In

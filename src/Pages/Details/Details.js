@@ -21,16 +21,13 @@ const Details = () => {
       .catch((err) => console.log(err));
   }, [name, allReviews]);
 
-
-
-
   
   const userReview = {
     reviewId: _id,
     name,
-    username: reviews.name,
+    username: reviews?.name,
     email: user?.email,
-    description: reviews.description,
+    description: reviews?.description,
     photoURL:user?.photoURL
   };
 
@@ -116,9 +113,17 @@ const Details = () => {
       </div>
 
       <div className="grid lg:grid-cols-4 gap-5 p-5 mb-5 md:grid-cols-3 gird-cols-1 mx-auto items-center justify-center ">
-        {allReviews.map((rev) => (
-          <AllReviews key={rev._id} reviews={rev}></AllReviews>
-        ))}
+        {allReviews?.length === 0 ? (
+          <p className="text-md font-semibold italic text-muited">
+            No review available
+          </p>
+        ) : (
+          <>
+            {allReviews.map((rev) => (
+              <AllReviews key={rev._id} reviews={rev}></AllReviews>
+            ))}
+          </>
+        )}
       </div>
 
       {/* review form section */}
