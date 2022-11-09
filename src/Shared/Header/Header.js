@@ -22,15 +22,17 @@ const Header = () => {
     <div className=" bg-white ">
       <nav className="2xl:container 2xl:mx-auto sm:py-6 sm:px-7 py-5 px-4">
         {/* For large and Medium-sized Screen */}
-        <div className=" flex justify-between items-center ">
-          <div className=" flex space-x-3 items-center">
-            <img className="w-16 p-0 m-0 rounded-full" src={logo} alt="" />
-            <h1 className=" font-semibold text-2xl leading-6 text-gray-800">
-              Art Of Defensee
-            </h1>
+        <div className=" flex justify-between items-center gap-2 ">
+          <div className=" flex gap-1 items-center">
+            <img className="w-12 p-0 m-0 rounded-full" src={logo} alt="" />
+            <Link to='/'>
+              <h1 className=" font-semibold text-2xl leading-6 text-gray-800">
+                Art Of Defensee
+              </h1>
+            </Link>
           </div>
 
-          <div className="hidden   sm:flex flex-row items-center space-x-6">
+          <div className="hidden  sm:flex flex-row items-center gap-3">
             <Link to="/">Home</Link>
             <Link>Blog</Link>
             {user?.uid && (
@@ -44,13 +46,20 @@ const Header = () => {
           <div className="hidden sm:flex flex-row justify-center items-center space-x-4">
             {user?.uid ? (
               <>
-                <div className="w-12 h-12 rounded-full border">
-                  <img
-                    className="w-12 h-12 rounded-full"
-                    src={user?.photoURL}
-                    alt=""
-                  />
-                </div>
+                {user?.photoURL ? (
+                  <div className="w-12 h-12 rounded-full border">
+                    <img
+                      className="w-12 h-12 rounded-full"
+                      src={user?.photoURL}
+                      alt=""
+                    />
+                  </div>
+                ) : (
+                  <div className="w-12 h-12 border rounded-full flex justify-center items-center">
+                    <FaUser></FaUser>
+                  </div>
+                )}
+
                 <Link to="/">
                   <button
                     onClick={handleLogOut}
@@ -138,7 +147,7 @@ const Header = () => {
           id="MobileNavigation"
           className={`${show ? "block" : "hidden"} sm:hidden mt-4 mx-auto`}
         >
-          <div className="flex flex-col justify-center space-y-6">
+          <div className="flex flex-col justify-center gap-6">
             <Link to="/">Home</Link>
             <Link>Blog</Link>
             {user?.uid && (
@@ -151,13 +160,20 @@ const Header = () => {
           <div className="flex flex-col gap-4 mt-4 w-80  ">
             {user?.uid ? (
               <>
-                <div className="w-12 h-12  rounded-full border">
-                  <img
-                    className="w-12 h-12 rounded-full"
-                    src={user?.photoURL}
-                    alt=""
-                  />
-                </div>
+                {user?.photoURL ? (
+                  <div className="w-12 h-12 rounded-full border">
+                    <img
+                      className="w-12 h-12 rounded-full"
+                      src={user?.photoURL}
+                      alt=""
+                    />
+                  </div>
+                ) : (
+                  <div className="w-12 h-12 border rounded-full flex justify-center items-center">
+                    <FaUser></FaUser>
+                  </div>
+                )}
+
                 <Link to="/">
                   <button
                     onClick={handleLogOut}

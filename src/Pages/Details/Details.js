@@ -34,16 +34,16 @@ const Details = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(reviews);
-
     fetch("http://localhost:5000/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
       body: JSON.stringify(userReview),
-    });
-
+    }).then(res => res.json())
+      .then(data => {
+      console.log(data);
+    }).catch(err => console.log(err))
     e.target.reset();
   };
 
@@ -80,7 +80,7 @@ const Details = () => {
             </div>
 
             <p className=" flex gap-3 items-center font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 mt-6 ">
-              <span>Price : </span> {price}
+              <span>Price : </span> ${price}
             </p>
           </div>
 
@@ -187,11 +187,11 @@ const Details = () => {
               ></textarea>
             </div>
             <div className="lg:w-4/5 md:w-4/5 w-full mx-auto p-2">
-              <button className="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 hover:bg-gray-100 w-full h-full py-3 px-20 bg-blue-100 border rounded border-gray-200">
-                <p className="text-sm font-medium leading-none text-gray-600">
-                  Submit
-                </p>
-              </button>
+              <input
+                className=" text-sm font-medium leading-none text-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300 hover:bg-gray-100 w-full h-full py-3 px-20 bg-blue-100 border rounded border-gray-200"
+                type="submit"
+                value="Submit"
+              />
             </div>
           </form>
         </div>

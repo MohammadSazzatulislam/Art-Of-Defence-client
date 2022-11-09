@@ -45,7 +45,7 @@ const carousel = () => {
                 />
               </svg>
             </ButtonBack>
-            {/* <Slider>
+            <Slider>
               <Slide index={0}>
                 <div className="gallery-cell lg:mr-7 mr-6 lg:w-1/2 sm:w-96 w-full h-full">
                   <div className="relative w-full h-full lg:block hidden">
@@ -131,7 +131,7 @@ const carousel = () => {
                   </div>
                 </div>
               </Slide>
-            </Slider> */}
+            </Slider>
             <ButtonNext
               role="button"
               aria-label="slide forward"
@@ -191,7 +191,7 @@ const carousel = () => {
                 />
               </svg>
             </ButtonBack>
-            {/* <Slider className="carousel__sliderLarge">
+            <Slider className="carousel__sliderLarge">
               <Slide className="carousel__inner-slideLarge" index={0}>
                 <div className="gallery-cell w-full h-full">
                   <div className="relative w-full h-full lg:block hidden">
@@ -300,7 +300,7 @@ const carousel = () => {
                   </div>
                 </div>
               </Slide>
-            </Slider> */}
+            </Slider>
             <ButtonNext
               role="button"
               aria-label="slide forward"

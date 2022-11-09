@@ -15,7 +15,7 @@ const AllServiceCard = ({ card }) => {
             {details.slice(0, 120)}...
           </p>
           <p className="text-md font-semibold flex gap-2 items-center  text-gray-700 mt-3">
-            <span className="">Price :</span> {price}
+            <span className="">Price :</span> ${price}
           </p>
         </div>
       </div>

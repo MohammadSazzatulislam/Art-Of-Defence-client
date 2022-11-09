@@ -82,7 +82,6 @@ const SignUp = () => {
               <input
                 name="photoURL"
                 onBlur={handleChange}
-                required
                 placeholder="enter your photoURL"
                 type="photoURL"
                 className="bg-gray-200 border rounded focus:outline-none text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
