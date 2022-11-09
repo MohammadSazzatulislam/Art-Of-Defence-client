@@ -7,11 +7,11 @@ import AllReviews from "./AllReviews/AllReviews";
 const Details = () => {
   const { user } = useContext(UserContext);
 
-  const { _id,  name, details, img, price,  } = useLoaderData();
+  const { _id, name, details, img, price, category } = useLoaderData();
 
   const [reviews, setReviews] = useState(user);
-  const [allReviews, setAllReviews] = useState([])
-  
+  const [allReviews, setAllReviews] = useState([]);
+
   useEffect(() => {
     fetch(`http://localhost:5000/reviews?name=${name}`)
       .then((res) => res.json())
@@ -21,7 +21,6 @@ const Details = () => {
       .catch((err) => console.log(err));
   }, [name, allReviews]);
 
-  
   const userReview = {
     reviewId: _id,
     name,
@@ -29,13 +28,13 @@ const Details = () => {
     username: reviews?.name,
     email: user?.email,
     description: reviews?.description,
-    photoURL:user?.photoURL
+    photoURL: user?.photoURL,
   };
 
-  const handleSubmit = e => {
-    e.preventDefault()
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-      console.log(reviews)
+    console.log(reviews);
 
     fetch("http://localhost:5000/reviews", {
       method: "POST",
@@ -45,19 +44,16 @@ const Details = () => {
       body: JSON.stringify(userReview),
     });
 
+    e.target.reset();
+  };
 
-    e.target.reset()
-  }
-
-  const handleBlur = event => {
-    const name = event.target.name
-    const field = event.target.value
-    const newReviews = { ...reviews }
-    newReviews[name] =field
+  const handleBlur = (event) => {
+    const name = event.target.name;
+    const field = event.target.value;
+    const newReviews = { ...reviews };
+    newReviews[name] = field;
     setReviews(newReviews);
-}
-
-
+  };
 
   return (
     <div>
@@ -73,33 +69,14 @@ const Details = () => {
               {details}
             </h2>
             <div className="flex justify-around items-center gap-2">
-              <img
-                className="w-28 rounded"
-                src="https://st3.depositphotos.com/3917667/18387/i/600/depositphotos_183874886-stock-photo-the-studio-shot-of-group.jpg"
-                alt=""
-              />
-              <img
-                className="w-28 rounded"
-                src="https://st3.depositphotos.com/3917667/18387/i/600/depositphotos_183874886-stock-photo-the-studio-shot-of-group.jpg"
-                alt=""
-              />
-              <img
-                className="w-28 rounded"
-                src="https://st3.depositphotos.com/3917667/18387/i/600/depositphotos_183874886-stock-photo-the-studio-shot-of-group.jpg"
-                alt=""
-              />
-              <img
-                className="w-28 rounded"
-                src="https://st3.depositphotos.com/3917667/18387/i/600/depositphotos_183874886-stock-photo-the-studio-shot-of-group.jpg"
-                alt=""
-              />
-              
-
-              {/* {category.map((detail, _index) => (
-                <ul className="list-disc pl-7" key={_index}>
-                  <li> {detail}</li>
-                </ul>
-              ))} */}
+              {category.map((detail, _index) => (
+                <img
+                  key={_index}
+                  className="w-28 rounded "
+                  src={detail}
+                  alt=""
+                />
+              ))}
             </div>
 
             <p className=" flex gap-3 items-center font-semibold lg:text-2xl text-xl lg:leading-6 leading-5 mt-6 ">
