@@ -7,12 +7,11 @@ import { FaUser } from "react-icons/fa";
 const Header = () => {
   const [show, setshow] = useState(false);
 
-  const { user, signOutUser} = useContext(UserContext);
+  const { user, signOutUser } = useContext(UserContext);
 
   const handleLogOut = () => {
     signOutUser()
-      .then(() => {
-      })
+      .then(() => {})
       .catch((error) => {
         // An error happened.
       });
@@ -25,7 +24,7 @@ const Header = () => {
         <div className=" flex justify-between items-center gap-2 ">
           <div className=" flex gap-1 items-center">
             <img className="w-12 p-0 m-0 rounded-full" src={logo} alt="" />
-            <Link to='/'>
+            <Link to="/">
               <h1 className=" font-semibold text-2xl leading-6 text-gray-800">
                 Art Of Defensee
               </h1>
@@ -34,7 +33,7 @@ const Header = () => {
 
           <div className="hidden  sm:flex flex-row items-center gap-3">
             <Link to="/">Home</Link>
-            <Link>Blog</Link>
+            <Link to="/blog">Blog</Link>
             {user?.uid && (
               <>
                 <Link to="/addService"> Add Service</Link>
@@ -149,7 +148,7 @@ const Header = () => {
         >
           <div className="flex flex-col justify-center gap-6">
             <Link to="/">Home</Link>
-            <Link>Blog</Link>
+            <Link to="/blog">Blog</Link>
             {user?.uid && (
               <>
                 <Link to="/addService"> Add Service</Link>
