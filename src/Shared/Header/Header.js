@@ -31,7 +31,7 @@ const Header = () => {
             </Link>
           </div>
 
-          <div className="hidden  sm:flex flex-row items-center gap-3">
+          <div className="hidden font-semibold text-md  sm:flex flex-row items-center gap-4">
             <Link to="/">Home</Link>
             <Link to="/blog">Blog</Link>
             {user?.uid && (
@@ -146,7 +146,7 @@ const Header = () => {
           id="MobileNavigation"
           className={`${show ? "block" : "hidden"} sm:hidden mt-4 mx-auto`}
         >
-          <div className="flex flex-col justify-center gap-6">
+          <div className="flex flex-col font-semibold text-md justify-center gap-6">
             <Link to="/">Home</Link>
             <Link to="/blog">Blog</Link>
             {user?.uid && (

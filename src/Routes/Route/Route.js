@@ -9,6 +9,7 @@ import Details from "../../Pages/Details/Details";
 import MyReview from "../../Pages/MyReview/MyReview";
 import AddServices from "../../Pages/AddService/AddServices";
 import Blog from "../../Pages/Blog/Blog";
+import UpDateReviews from "../../Pages/UpDateReview/UpDateReviews";
 
 
 const router = createBrowserRouter([
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
         element: <SignIn></SignIn>,
       },
       {
-        path: '/blog',
+        path: "/blog",
         element: <Blog></Blog>,
       },
       {
@@ -49,9 +50,15 @@ const router = createBrowserRouter([
         element: <MyReview></MyReview>,
       },
       {
-        path: '/addService',
+        path: "/addService",
         element: <AddServices></AddServices>,
-      }
+      },
+      {
+        path: "/update/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/reviews/${params.id}`),
+        element: <UpDateReviews></UpDateReviews>,
+      },
     ],
   },
 ]);

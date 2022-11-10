@@ -1,11 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
+
 
 const Reviews = ({ review, handleDelete }) => {
   const { _id, img, name, username, description } = review;
 
   return (
-    <div className="mt-4 p-3  md:mt-6 flex border-b border-gray-300 flex-col md:flex-row justify-start items-start md:items-center md:space-x-6 xl:space-x-8 w-full ">
+    <div
+      className="mt-4 p-3  md:mt-6 flex border-b border-gray-300 flex-col md:flex-row 
+    
+    justify-start items-start md:items-center md:space-x-6 xl:space-x-8 w-full "
+    >
       <div className="w-full md:w-40">
         <img className="w-full hidden md:block" src={img} alt="" />
         <img className="w-full md:hidden" src={img} alt="" />
@@ -17,8 +23,7 @@ const Reviews = ({ review, handleDelete }) => {
           </h3>
           <div className="flex justify-start items-start flex-col space-y-2">
             <p className="text-sm leading-none  text-gray-800">
-              <span className="text-black font-bold">By</span> :{" "}
-              {username}
+              <span className="text-black font-bold">By</span> : {username}
             </p>
             <p className="text-sm leading-none flex gap-2 items-center text-yellow-500  ">
               <span className="text-black font-bold">Raiting :</span>
@@ -32,9 +37,11 @@ const Reviews = ({ review, handleDelete }) => {
           </div>
         </div>
         <div className="flex justify-end space-x-8 w-full">
-          <button className="text-base xl:text-lg font-semibold leading-6 text-gray-800">
-            Edit
-          </button>
+          <Link to={`/update/${_id}`} >
+            <button className="text-base xl:text-lg font-semibold leading-6 text-gray-800">
+              Edit
+            </button>
+          </Link>
           <button
             onClick={() => handleDelete(_id)}
             className="text-base xl:text-lg font-semibold leading-6 text-gray-800"
