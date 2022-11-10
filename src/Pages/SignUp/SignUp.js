@@ -38,6 +38,21 @@ const SignUp = () => {
     createNewUserSignUp(email, password)
       .then((result) => {
         const user = result.user;
+
+         fetch("http://localhost:5000/jwt", {
+           method: "POST",
+           headers: {
+             "content-type": "application/json",
+           },
+           body: JSON.stringify(user?.email),
+         })
+           .then((res) => res.json())
+           .then((data) => {
+             console.log(data);
+             localStorage.setItem("jwt-token", data.token);
+           });
+
+
         setUserInfo({
           name: "",
           photoURL: "",

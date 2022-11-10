@@ -3,17 +3,26 @@ import { UserContext } from "../../Context/AuthContext/AuthContext";
 import Reviews from "./Reviews";
 
 const MyReview = () => {
-  const { user } = useContext(UserContext);
+  const { user, signOutUser } = useContext(UserContext);
   const [userReview, setUserReview] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/review?email=${user?.email}`)
-      .then((res) => res.json())
+    fetch(`http://localhost:5000/review?email=${user?.email}`, {
+      headers: {
+        authorization: localStorage.getItem("jwt-token"),
+      },
+    })
+      .then((res) => {
+        if (res.status === 401 || res.status === 403) {
+         return signOutUser();
+        }
+        return res.json();
+      })
       .then((data) => {
         setUserReview(data);
       })
       .catch((err) => console.log(err));
-  }, [user?.email]);
+  }, [user?.email, signOutUser]);
 
     const handleDelete = (id) => {
         const agree = window.confirm('are your sure delete!!')

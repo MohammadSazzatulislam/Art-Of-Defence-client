@@ -47,7 +47,8 @@ const AuthContext = ({ children }) => {
   };
     
     const signOutUser = () => {
-         setLoading(true);
+      setLoading(true);
+      localStorage.removeItem('jwt-token')
         return signOut(auth)
     }
 
