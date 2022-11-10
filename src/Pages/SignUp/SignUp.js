@@ -1,51 +1,141 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { UserContext } from "../../Context/AuthContext/AuthContext";
 
 const SignUp = () => {
-  const [currentUser, setCurrentUser] = useState([]);
+  const [userInfo, setUserInfo] = useState({
+    name: "",
+    photoURL: "",
+    email: "",
+    password: "",
+  });
 
-  const { createNewUserSignUp, upDateProfile, setLoading } =
+  const [errors, setErrors] = useState({
+    email: "",
+    password: "",
+    wrongEmail: "",
+  });
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
+  const { createNewUserSignUp, upDateProfile, googleSignIn, setLoading } =
     useContext(UserContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const name = currentUser.name;
-    const photoURL = currentUser.photoURL;
-    const email = currentUser.email;
-    const password = currentUser.password;
+    const displayName = userInfo.name;
+    const photoURL = userInfo.photoURL;
+    const email = userInfo.email;
+    const password = userInfo.password;
 
+    // sign up user
     createNewUserSignUp(email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log(user);
-
-        upDateProfile(name, photoURL)
+      .then((result) => {
+        const user = result.user;
+        setUserInfo({
+          name: "",
+          photoURL: "",
+          email: "",
+          password: "",
+        });
+        navigate(from, { replace: true });
+        setLoading(false);
+        //update profile name and photoURL
+        upDateProfile(displayName, photoURL)
           .then(() => {
-            setLoading(false)
+            // Profile updated!
+            // ...
           })
           .catch((error) => {
+            console.error(error);
             // An error occurred
             // ...
           });
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
+        setErrors({ ...errors, wrongEmail: error.message });
+      })
+      .finally(() => {
+        setLoading(false);
       });
+  };
+  const handleNameChange = (e) => {
+    const name = e.target.value;
+    setUserInfo({ ...userInfo, name: name });
+  };
+  const handlePhotoURLChange = (e) => {
+    const photoURL = e.target.value;
+    setUserInfo({ ...userInfo, photoURL: photoURL });
+  };
+  const handleEmailChange = (e) => {
+    const email = e.target.value;
 
-    event.target.reset();
+    if (
+      !/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+        email
+      )
+    ) {
+      setErrors({
+        ...errors,
+        email: "please entered an valid email address!",
+      });
+    } else {
+      setErrors({
+        email: "",
+      });
+    }
+    setUserInfo({ ...userInfo, email: email });
+  };
+  const handlePasswordChange = (e) => {
+    const password = e.target.value;
+
+    if (!/(?=.*[A-Z])/.test(password)) {
+      setErrors({ ...errors, password: "At least one uppercase character" });
+    } else if (!/(?=.*[a-z])/.test(password)) {
+      setErrors({ ...errors, password: "At least one lowercase character" });
+    } else if (!/(?=.*\d)/.test(password)) {
+      setErrors({ ...errors, password: "At least one digit" });
+    } else if (
+      !/^(?=.*[~`!@#$%^&*()--+={}\[\]|\\:;"'<>,.?/_₹]).*$/.test(password)
+    ) {
+      setErrors({ ...errors, password: "At least one special characte" });
+    } else if (!/(.{6,})/.test(password)) {
+      setErrors({ ...errors, password: "Minimum 6 characters" });
+    } else {
+      setErrors({
+        password: "",
+      });
+    }
+
+    setUserInfo({ ...userInfo, password: password });
   };
 
-  const handleChange = (e) => {
-    const name = e.target.name;
-    const field = e.target.value;
-    const newUser = { ...currentUser };
-    newUser[name] = field;
-    setCurrentUser(newUser);
-  };
+  //  const handleGoogleSubmit = () => {
+  //    googleSignIn(googleProvider)
+  //      .then((result) => {
+  //        // This gives you a Google Access Token. You can use it to access the Google API.
+  //        const credential = GoogleAuthProvider.credentialFromResult(result);
+  //        const token = credential.accessToken;
+  //        // The signed-in user info.
+  //        const user = result.user;
+  //        navigate(from, { replace: true });
+  //        setLoading(false);
+  //        // ...
+  //      })
+  //      .catch((error) => {
+  //        // Handle Errors here.
+  //        const errorCode = error.code;
+  //        const errorMessage = error.message;
+  //        // The email of the user's account used.
+  //        const email = error.customData.email;
+  //        // The AuthCredential type that was used.
+  //        const credential = GoogleAuthProvider.credentialFromError(error);
+  //        // ...
+  //      });
+  //  };
 
   return (
     <div className="h-full w-full py-10 px-4">
@@ -68,7 +158,7 @@ const SignUp = () => {
               </label>
               <input
                 name="name"
-                onBlur={handleChange}
+                onChange={handleNameChange}
                 required
                 placeholder="enter your name"
                 type="text"
@@ -81,7 +171,7 @@ const SignUp = () => {
               </label>
               <input
                 name="photoURL"
-                onBlur={handleChange}
+                onChange={handlePhotoURLChange}
                 placeholder="enter your photoURL"
                 type="photoURL"
                 className="bg-gray-200 border rounded focus:outline-none text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
@@ -93,12 +183,17 @@ const SignUp = () => {
               </label>
               <input
                 name="email"
-                onBlur={handleChange}
+                onChange={handleEmailChange}
                 required
                 placeholder="enter email address"
                 type="email"
                 className="bg-gray-200 border rounded focus:outline-none text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
               />
+              {errors.email && (
+                <label className="text-sm font-medium leading-none text-red-600">
+                  {errors.email}
+                </label>
+              )}
             </div>
             <div className="mt-6  w-full">
               <label className="text-sm font-medium leading-none text-gray-800">
@@ -107,12 +202,13 @@ const SignUp = () => {
               <div className="relative flex items-center justify-center">
                 <input
                   name="password"
-                  onBlur={handleChange}
+                  onChange={handlePasswordChange}
                   required
                   placeholder="enter Password"
                   type="password"
                   className="bg-gray-200 border rounded focus:outline-none text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
                 />
+
                 <div className="absolute right-0 mt-2 mr-3 cursor-pointer">
                   <svg
                     width={16}
@@ -128,6 +224,16 @@ const SignUp = () => {
                   </svg>
                 </div>
               </div>
+              {errors.password && (
+                <label className="text-sm font-medium leading-none text-red-600">
+                  {errors.password}
+                </label>
+              )}
+              {errors.wrongEmail && (
+                <label className="text-sm font-medium leading-none text-red-600">
+                  {errors.wrongEmail}
+                </label>
+              )}
             </div>
             <div className="mt-8">
               <button className="btn btn-primary  text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700  rounded-sm hover:bg-indigo-600 py-4 w-full">
