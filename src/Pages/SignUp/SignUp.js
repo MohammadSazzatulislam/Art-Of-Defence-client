@@ -39,28 +39,31 @@ const SignUp = () => {
       .then((result) => {
         const user = result.user;
 
+        const currentUser = {
+          email : user.email
+        }
+
          fetch("http://localhost:5000/jwt", {
            method: "POST",
            headers: {
              "content-type": "application/json",
            },
-           body: JSON.stringify(user?.email),
+           body: JSON.stringify(currentUser),
          })
            .then((res) => res.json())
            .then((data) => {
              console.log(data);
              localStorage.setItem("jwt-token", data.token);
-           });
+             setUserInfo({
+               name: "",
+               photoURL: "",
+               email: "",
+               password: "",
+             });
+             navigate(from, { replace: true });
+             setLoading(false);
+           }).catch(err => console.log(err))
 
-
-        setUserInfo({
-          name: "",
-          photoURL: "",
-          email: "",
-          password: "",
-        });
-        navigate(from, { replace: true });
-        setLoading(false);
         //update profile name and photoURL
         upDateProfile(displayName, photoURL)
           .then(() => {

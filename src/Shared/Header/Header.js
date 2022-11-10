@@ -34,12 +34,8 @@ const Header = () => {
           <div className="hidden font-semibold text-md  sm:flex flex-row items-center gap-4">
             <Link to="/">Home</Link>
             <Link to="/blog">Blog</Link>
-            {user?.uid && (
-              <>
-                <Link to="/addService"> Add Service</Link>
-                <Link to="/myReview">My Reviews</Link>
-              </>
-            )}
+            <Link to="/addService"> Add Service</Link>
+            <Link to="/myReview">My Reviews</Link>
           </div>
 
           <div className="hidden sm:flex flex-row justify-center items-center space-x-4">
@@ -149,12 +145,8 @@ const Header = () => {
           <div className="flex flex-col font-semibold text-md justify-center gap-6">
             <Link to="/">Home</Link>
             <Link to="/blog">Blog</Link>
-            {user?.uid && (
-              <>
-                <Link to="/addService"> Add Service</Link>
-                <Link to="/myReview">My Reviews</Link>
-              </>
-            )}
+            <Link to="/addService"> Add Service</Link>
+            <Link to="/myReview">My Reviews</Link>
           </div>
           <div className="flex flex-col gap-4 mt-4 w-80  ">
             {user?.uid ? (
