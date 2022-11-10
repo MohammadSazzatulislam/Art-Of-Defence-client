@@ -1,4 +1,5 @@
 import React from 'react';
+import logo  from '../../images/logo.jpg'
 
 const Footer = () => {
     return (
@@ -12,14 +13,15 @@ const Footer = () => {
           <div className="flex pt-36 md:pt-32 lg:pt-40 xl:pt-96   px-4 md:px-6  xl:px-20 flex-col justify-start items-start md:justify-center md:items-center relative z-10">
             <div className="flex  flex-col items-start justify-start xl:justify-center xl:space-x-8 xl:flex-row">
               <div className="flex justify-start items-center space-x-4">
-                <div className="cursor-pointer w-12">
+                <div className="cursor-pointer w-16 ">
                   <img
-                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/footer_5_marketing_svg1.svg"
+                    className='rounded-full'
+                    src={logo}
                     alt="logo"
                   />
                 </div>
                 <p className="w-60 text-xl xl:text-2xl font-semibold leading-normal text-white">
-                  The North
+                  Art Of Defensee
                 </p>
               </div>
               <div className="mt-12 xl:mt-0 grid grid-cols-1 sm:grid-cols-3 gap-y-12 sm:gap-y-0 w-full md:w-auto sm:gap-x-20 md:gap-x-28 xl:gap-8">
@@ -86,9 +88,6 @@ const Footer = () => {
               </div>
             </div>
             <div className="mt-12 flex  xl:justify-between xl:flex-row flex-col-reverse items-center xl:items-start w-full ">
-              <p className="mt-10 md:mt-12 xl:mt-0 text-sm leading-none text-white">
-                2020 The Good Company. All Rights Reserved
-              </p>
               <div className="mt-10 md:mt-12 xl:mt-0 md:flex-row flex-col flex md:justify-center w-full md:w-auto justify-start items-start space-y-4 md:space-y-0 md:items-center md:space-x-4 xl:space-x-6">
                 <button className="text-base leading-none text-white hover:text-gray-300">
                   Terms of service

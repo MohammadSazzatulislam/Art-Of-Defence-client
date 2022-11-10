@@ -1,12 +1,24 @@
 import React from "react";
+import { FullScreen, useFullScreenHandle } from "react-full-screen";
 import { Link } from 'react-router-dom';
 
 const AllServiceCard = ({ card }) => {
+
+   const handle = useFullScreenHandle();
   const { name, img, details, _id, price } = card;
+
+
   return (
     <div className="w-80 p-4  rounded border hover:shadow-lg">
       <div className="flex justify-center items-center flex-col ">
-        <img className="w-full h-60 rounded" src={img} alt="" />
+        <FullScreen handle={handle}>
+          <img
+            onClick={handle.enter}
+            className="w-full h-full rounded cursor-pointer"
+            src={img}
+            alt=""
+          />
+        </FullScreen>
         <div className="flex  flex-col mt-5 mb-5">
           <p className="text-sm lg:text-2xl md:text-md font-semibold leading-none text-gray-800">
             {name}

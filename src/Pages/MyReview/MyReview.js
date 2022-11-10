@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet-async";
 
 const MyReview = () => {
   const Swal = require("sweetalert2");
-  const { user, signOutUser } = useContext(UserContext);
+  const { user, signOutUser, setLoading } = useContext(UserContext);
   const [userReview, setUserReview] = useState([]);
 
   useEffect(() => {
@@ -25,10 +25,14 @@ const MyReview = () => {
         return res.json();
       })
       .then((data) => {
+        if (!data) {
+          setLoading(true);
+        }
         setUserReview(data);
+        setLoading(false)
       })
       .catch((err) => console.log(err));
-  }, [user?.email, signOutUser]);
+  }, [user?.email, signOutUser, setLoading]);
 
   const handleDelete = (id) => {
     Swal.fire({
