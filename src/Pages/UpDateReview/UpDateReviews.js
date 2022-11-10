@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../../Context/AuthContext/AuthContext";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
 
@@ -8,6 +8,8 @@ const UpDateReviews = () => {
   const { user } = useContext(UserContext);
 
   const review = useLoaderData();
+
+  const navigate = useNavigate()
 
   const [reviews, setReviews] = useState(review);
 
@@ -25,6 +27,7 @@ const UpDateReviews = () => {
       .then((data) => {
         if (data.acknowledged) {
           toast.success("Successfully updated!");
+          navigate("/myReview");
         }
       })
       .catch((err) => console.log(err));

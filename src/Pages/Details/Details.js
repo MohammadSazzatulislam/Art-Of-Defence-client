@@ -77,11 +77,11 @@ const Details = () => {
             <h2 className="font-semibold lg:text-xl text-lg lg:leading-9 leading-7 text-gray-800 mt-4">
               {details}
             </h2>
-            <div className="flex justify-around items-center gap-2">
+            <div className="flex justify-center items-center gap-2">
               {category.map((detail, _index) => (
                 <img
                   key={_index}
-                  className="w-28 rounded "
+                  className="w-16 h-20 rounded "
                   src={detail}
                   alt=""
                 />

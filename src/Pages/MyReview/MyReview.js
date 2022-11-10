@@ -25,11 +25,7 @@ const MyReview = () => {
         return res.json();
       })
       .then((data) => {
-        if (!data) {
-          setLoading(true);
-        }
         setUserReview(data);
-        setLoading(false)
       })
       .catch((err) => console.log(err));
   }, [user?.email, signOutUser, setLoading]);

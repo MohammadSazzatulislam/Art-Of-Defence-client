@@ -1,7 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import BlogPage from './BlogPage/BlogPage';
 import Carousel from './Carousel/Carousel';
 import ServicesCard from './ServicesCard/ServicesCard';
+import SubcribetionPage from './SubcribetionPage/SubcribetionPage';
 
 const Home = () => {
     return (
@@ -11,6 +13,8 @@ const Home = () => {
         </Helmet>
         <Carousel></Carousel>
         <ServicesCard></ServicesCard>
+        <BlogPage></BlogPage>
+        <SubcribetionPage></SubcribetionPage>
       </div>
     );
 };

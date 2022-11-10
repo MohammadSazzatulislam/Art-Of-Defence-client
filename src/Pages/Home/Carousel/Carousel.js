@@ -54,7 +54,7 @@ const carousel = () => {
                       alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="pl-6 pt-6 lg:pl-8 lg:pt-8 absolute left-5 top-48">
+                    <div className="pl-6 pt-6 lg:pl-8 lg:pt-8 absolute left-5 top-44">
                       <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
                         WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS SCHOOL
                       </h1>
@@ -66,7 +66,7 @@ const carousel = () => {
                       alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="pl-6 pt-6 lg:pl-8 lg:pt-8 absolute left-5 top-48">
+                    <div className="pl-6 pt-6 lg:pl-8 lg:pt-8 absolute left-5 top-44">
                       <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
                         WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS SCHOOL
                       </h1>
@@ -82,7 +82,7 @@ const carousel = () => {
                       alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="pl-6 pt-6 lg:pl-8 lg:pt-8 absolute left-5 top-12">
+                    <div className="pl-6 pt-6 lg:pl-8 lg:pt-8 absolute left-5 top-10">
                       <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
                         WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS SCHOOL
                       </h1>
@@ -94,7 +94,7 @@ const carousel = () => {
                       alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="pl-6 pt-6 lg:pl-8 lg:pt-8 absolute left-5 top-12">
+                    <div className="pl-6 pt-6 lg:pl-8 lg:pt-8 absolute left-5 top-10">
                       <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
                         WELCOME TO <br />
                         KARATE AND MARTIAL <br /> ARTS SCHOOL
@@ -111,7 +111,7 @@ const carousel = () => {
                       alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="pl-6 pt-6 lg:pl-8 lg:pt-8 absolute left-5 top-48">
+                    <div className="pl-6 pt-6 lg:pl-8 lg:pt-8 absolute left-5 top-44">
                       <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
                         WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS SCHOOL
                       </h1>
@@ -123,7 +123,7 @@ const carousel = () => {
                       alt="sitting area"
                       className="object-center object-cover w-full h-full"
                     />
-                    <div className="pl-6 pt-6 lg:pl-8 lg:pt-8 absolute left-5 top-48">
+                    <div className="pl-6 pt-6 lg:pl-8 lg:pt-8 absolute left-5 top-44">
                       <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
                         WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS SCHOOL
                       </h1>
