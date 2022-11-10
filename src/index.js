@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import AuthContext from './Context/AuthContext/AuthContext';
 import { Toaster } from "react-hot-toast";
+import { HelmetProvider } from 'react-helmet-async';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -12,7 +13,9 @@ root.render(
   <React.StrictMode>
     <AuthContext>
       <Toaster />
-      <App />
+      <HelmetProvider>
+        <App />
+      </HelmetProvider>
     </AuthContext>
   </React.StrictMode>
 );

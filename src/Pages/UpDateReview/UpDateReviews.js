@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { UserContext } from "../../Context/AuthContext/AuthContext";
 import { useLoaderData } from "react-router-dom";
 import toast from "react-hot-toast";
-
+import { Helmet } from "react-helmet-async";
 
 const UpDateReviews = () => {
   const { user } = useContext(UserContext);
@@ -14,7 +14,7 @@ const UpDateReviews = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch(`http://localhost:5000/reviews/${review._id}`, {
+    fetch(`https://art-of-defensee-server.vercel.app/reviews/${review._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -25,7 +25,7 @@ const UpDateReviews = () => {
       .then((data) => {
         if (data.acknowledged) {
           toast.success("Successfully updated!");
-        } 
+        }
       })
       .catch((err) => console.log(err));
   };
@@ -40,6 +40,9 @@ const UpDateReviews = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Art Of Defensee-UpDateReviews</title>
+      </Helmet>
       <form id="reviewSubmitFrom" onSubmit={handleSubmit}>
         <div className="lg:w-4/5 md:w-4/5 w-full p-2 mx-auto gap-3 flex ">
           <div className="lg:w-1/2 w-full mx-auto">

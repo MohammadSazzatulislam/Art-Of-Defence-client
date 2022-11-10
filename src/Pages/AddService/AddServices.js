@@ -1,21 +1,22 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import toast from "react-hot-toast";
 
 const AddServices = () => {
   const [services, setServices] = useState([]);
 
   const handlesubmit = (e) => {
-      e.preventDefault();
-      
-      const addServices = {
-        name: services.name,
-        img: services.img,
-        category: [services.img1, services.img2, services.img3, services.img4],
-        price: services.price,
-        details: services.details
-      };
+    e.preventDefault();
 
-    fetch(`http://localhost:5000/services`, {
+    const addServices = {
+      name: services.name,
+      img: services.img,
+      category: [services.img1, services.img2, services.img3, services.img4],
+      price: services.price,
+      details: services.details,
+    };
+
+    fetch(`https://art-of-defensee-server.vercel.app/services`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -47,6 +48,9 @@ const AddServices = () => {
       onSubmit={handlesubmit}
       className="bg-gray-200 py-10 flex flex-col items-center justify-center"
     >
+      <Helmet>
+        <title>Art Of Defensee-AddServices</title>
+      </Helmet>
       <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 items-center gap-5 ">
         {/* Code block starts */}
         <div className="flex flex-col ">

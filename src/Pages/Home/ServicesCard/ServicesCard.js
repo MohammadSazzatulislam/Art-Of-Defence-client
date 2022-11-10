@@ -5,10 +5,9 @@ import { FaArrowRight } from "react-icons/fa";
 
 const ServicesCard = () => {
   const [services, setServices] = useState([]);
-  console.log(services);
 
   useEffect(() => {
-    fetch("http://localhost:5000/services")
+    fetch("https://art-of-defensee-server.vercel.app/services")
       .then((res) => res.json())
       .then((data) => {
         setServices(data);

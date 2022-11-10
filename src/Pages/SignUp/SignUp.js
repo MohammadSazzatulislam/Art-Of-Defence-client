@@ -1,5 +1,6 @@
 import { GoogleAuthProvider } from "firebase/auth";
 import React, { useContext, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { UserContext } from "../../Context/AuthContext/AuthContext";
 
@@ -43,7 +44,7 @@ const SignUp = () => {
           email: user.email,
         };
 
-        fetch("http://localhost:5000/jwt", {
+        fetch("https://art-of-defensee-server.vercel.app/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -144,7 +145,7 @@ const SignUp = () => {
           email: user.email,
         };
 
-        fetch("http://localhost:5000/jwt", {
+        fetch("https://art-of-defensee-server.vercel.app/jwt", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -174,6 +175,9 @@ const SignUp = () => {
 
   return (
     <div className="h-full w-full py-10 px-4">
+      <Helmet>
+        <title>Art Of Defensee-SignUp</title>
+      </Helmet>
       <div className="flex gap-5 lg:flex-row md:flex-row flex-col items-center justify-center">
         <div className="bg-white lg:w-1/2  md:w-1/2 w-full ">
           <img

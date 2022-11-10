@@ -12,7 +12,6 @@ import Blog from "../../Pages/Blog/Blog";
 import UpDateReviews from "../../Pages/UpDateReview/UpDateReviews";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -37,13 +36,16 @@ const router = createBrowserRouter([
       },
       {
         path: "/servicess",
-        loader: () => fetch("http://localhost:5000/service"),
+        loader: () =>
+          fetch("https://art-of-defensee-server.vercel.app/service"),
         element: <AllServicess></AllServicess>,
       },
       {
         path: "/details/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/details/${params.id}`),
+          fetch(
+            `https://art-of-defensee-server.vercel.app/details/${params.id}`
+          ),
         element: <Details></Details>,
       },
       {
@@ -65,12 +67,13 @@ const router = createBrowserRouter([
       {
         path: "/update/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/reviews/${params.id}`),
+          fetch(
+            `https://art-of-defensee-server.vercel.app/reviews/${params.id}`
+          ),
         element: <UpDateReviews></UpDateReviews>,
       },
     ],
   },
 ]);
 
-
-export default router
+export default router;

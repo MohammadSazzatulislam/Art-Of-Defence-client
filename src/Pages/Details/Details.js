@@ -4,6 +4,7 @@ import { UserContext } from "../../Context/AuthContext/AuthContext";
 import { Link } from "react-router-dom";
 import AllReviews from "./AllReviews/AllReviews";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 const Details = () => {
   const { user } = useContext(UserContext);
@@ -14,7 +15,7 @@ const Details = () => {
   const [allReviews, setAllReviews] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?name=${name}`)
+    fetch(`https://art-of-defensee-server.vercel.app/reviews?name=${name}`)
       .then((res) => res.json())
       .then((data) => {
         setAllReviews(data);
@@ -35,7 +36,7 @@ const Details = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://art-of-defensee-server.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -62,6 +63,9 @@ const Details = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Art Of Defensee-Details</title>
+      </Helmet>
       <div className="2xl:container 2xl:mx-auto lg:py-10 lg:px-20 md:py-5 md:px-3 py-2 px-2 ">
         <div className="flex justify-center items-center lg:flex-row flex-col-reverse gap-6">
           {/* <!-- Description Div --> */}
