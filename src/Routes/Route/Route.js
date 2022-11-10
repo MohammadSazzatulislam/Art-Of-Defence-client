@@ -38,7 +38,11 @@ const router = createBrowserRouter([
         path: "/servicess",
         loader: () =>
           fetch("https://art-of-defensee-server.vercel.app/service"),
-        element: <AllServicess></AllServicess>,
+        element: (
+          <PrivateRoute>
+            <AllServicess></AllServicess>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/details/:id",
