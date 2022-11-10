@@ -1,7 +1,8 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../../Context/AuthContext/AuthContext";
 import { useLoaderData } from "react-router-dom";
-import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
+
 
 const UpDateReviews = () => {
   const { user } = useContext(UserContext);
@@ -22,7 +23,9 @@ const UpDateReviews = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        if (data.acknowledged) {
+          toast.success("Successfully updated!");
+        } 
       })
       .catch((err) => console.log(err));
   };

@@ -34,8 +34,8 @@ const SignIn = () => {
         const user = result.user;
 
         const currentUser = {
-          email : user.email
-        }
+          email: user.email,
+        };
 
         fetch("http://localhost:5000/jwt", {
           method: "POST",
@@ -51,7 +51,8 @@ const SignIn = () => {
             setUserInfo({ email: "", password: "" });
             navigate(from, { replace: true });
             setLoading(false);
-          }).catch(err => console.log(err))
+          })
+          .catch((err) => console.log(err));
       })
       .catch((error) => {
         setErrors({ ...errors, wrongPassword: error.message });
@@ -93,14 +94,26 @@ const SignIn = () => {
   const handleGoogleSubmit = () => {
     googleSignIn(googleProvider)
       .then((result) => {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-        // The signed-in user info.
         const user = result.user;
-        navigate(from, { replace: true });
-        setLoading(false);
-        // ...
+        const currentUser = {
+          email: user.email,
+        };
+
+        fetch("http://localhost:5000/jwt", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(currentUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            localStorage.setItem("jwt-token", data.token);
+            navigate(from, { replace: true });
+            setLoading(false);
+          })
+          .catch((err) => console.log(err));
       })
       .catch((error) => {
         // Handle Errors here.

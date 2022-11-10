@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 
 const AddServices = () => {
   const [services, setServices] = useState([]);
@@ -24,6 +25,9 @@ const AddServices = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        if (data.acknowledged) {
+          toast.success("added a new services");
+        }
       })
       .catch((err) => console.log(err));
 

@@ -1,8 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../Context/AuthContext/AuthContext";
 import Reviews from "./Reviews";
+import Swal from "sweetalert2/dist/sweetalert2.js";
 
 const MyReview = () => {
+  const Swal = require("sweetalert2");
   const { user, signOutUser } = useContext(UserContext);
   const [userReview, setUserReview] = useState([]);
 
@@ -14,7 +16,7 @@ const MyReview = () => {
     })
       .then((res) => {
         if (res.status === 401 || res.status === 403) {
-         return signOutUser();
+          return signOutUser();
         }
         return res.json();
       })
@@ -24,23 +26,30 @@ const MyReview = () => {
       .catch((err) => console.log(err));
   }, [user?.email, signOutUser]);
 
-    const handleDelete = (id) => {
-        const agree = window.confirm('are your sure delete!!')
-        if (agree) {
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
         fetch(`http://localhost:5000/reviews/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
           .then((data) => {
-              if (data.deletedCount) {
-                  alert('successfully delete')
-                  const remaining = userReview.filter(usr => usr._id !== id)
-                 setUserReview(remaining)
-            } 
+            const remaining = userReview.filter((usr) => usr._id !== id);
+            setUserReview(remaining);
           })
           .catch((err) => console.log(err));
+
+        Swal.fire("Deleted!", "Your file has been deleted.", "success");
       }
-    
+    });
   };
 
   return (

@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import { UserContext } from "../../Context/AuthContext/AuthContext";
 import { Link } from "react-router-dom";
 import AllReviews from "./AllReviews/AllReviews";
+import toast from "react-hot-toast";
 
 const Details = () => {
   const { user } = useContext(UserContext);
@@ -40,10 +41,14 @@ const Details = () => {
         "content-type": "application/json",
       },
       body: JSON.stringify(userReview),
-    }).then(res => res.json())
-      .then(data => {
-      console.log(data);
-    }).catch(err => console.log(err))
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          toast.success("added a new review");
+        }
+      })
+      .catch((err) => console.log(err));
     e.target.reset();
   };
 
