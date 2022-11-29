@@ -47,7 +47,6 @@ const SignIn = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             localStorage.setItem("jwt-token", data.token);
             setUserInfo({ email: "", password: "" });
             navigate(from, { replace: true });
@@ -109,7 +108,6 @@ const SignIn = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             localStorage.setItem("jwt-token", data.token);
             navigate(from, { replace: true });
             setLoading(false);
