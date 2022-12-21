@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   CarouselProvider,
   Slider,
@@ -55,9 +55,16 @@ const carousel = () => {
                       className="object-center object-cover w-full h-full"
                     />
                     <div className="pl-6 pt-6 lg:pl-8 lg:pt-8 absolute left-5 top-44">
-                      <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                        WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS SCHOOL
-                      </h1>
+                      <div
+                        data-aos="fade-left"
+                        data-aos-easing="linear"
+                        data-aos-duration="1500"
+                      >
+                        <h1 className=" md:text-2xl lg:text-5xl  font-medium text-white">
+                          WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS
+                          SCHOOL
+                        </h1>
+                      </div>
                     </div>
                   </div>
                   <div className="relative w-full h-full lg:hidden">
@@ -67,9 +74,16 @@ const carousel = () => {
                       className="object-center object-cover w-full h-full"
                     />
                     <div className="pl-6 pt-6 lg:pl-8 lg:pt-8 absolute left-5 top-44">
-                      <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                        WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS SCHOOL
-                      </h1>
+                      <div
+                        data-aos="fade-left"
+                        data-aos-easing="linear"
+                        data-aos-duration="1500"
+                      >
+                        <h1 className=" md:text-2xl lg:text-5xl  font-medium text-white">
+                          WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS
+                          SCHOOL
+                        </h1>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -83,9 +97,16 @@ const carousel = () => {
                       className="object-center object-cover w-full h-full"
                     />
                     <div className="pl-6 pt-6 lg:pl-8 lg:pt-8 absolute left-5 top-10">
-                      <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                        WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS SCHOOL
-                      </h1>
+                      <div
+                        data-aos="fade-left"
+                        data-aos-easing="linear"
+                        data-aos-duration="1500"
+                      >
+                        <h1 className=" md:text-2xl lg:text-5xl  font-medium text-white">
+                          WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS
+                          SCHOOL
+                        </h1>
+                      </div>
                     </div>
                   </div>
                   <div className="relative w-full h-full lg:hidden">
@@ -95,10 +116,16 @@ const carousel = () => {
                       className="object-center object-cover w-full h-full"
                     />
                     <div className="pl-6 pt-6 lg:pl-8 lg:pt-8 absolute left-5 top-10">
-                      <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                        WELCOME TO <br />
-                        KARATE AND MARTIAL <br /> ARTS SCHOOL
-                      </h1>
+                      <div
+                        data-aos="fade-left"
+                        data-aos-easing="linear"
+                        data-aos-duration="1500"
+                      >
+                        <h1 className=" md:text-2xl lg:text-5xl  font-medium text-white">
+                          WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS
+                          SCHOOL
+                        </h1>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -112,9 +139,16 @@ const carousel = () => {
                       className="object-center object-cover w-full h-full"
                     />
                     <div className="pl-6 pt-6 lg:pl-8 lg:pt-8 absolute left-5 top-44">
-                      <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                        WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS SCHOOL
-                      </h1>
+                      <div
+                        data-aos="fade-left"
+                        data-aos-easing="linear"
+                        data-aos-duration="1500"
+                      >
+                        <h1 className=" md:text-2xl lg:text-5xl  font-medium text-white">
+                          WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS
+                          SCHOOL
+                        </h1>
+                      </div>
                     </div>
                   </div>
                   <div className="relative w-full h-full lg:hidden">
@@ -124,9 +158,16 @@ const carousel = () => {
                       className="object-center object-cover w-full h-full"
                     />
                     <div className="pl-6 pt-6 lg:pl-8 lg:pt-8 absolute left-5 top-44">
-                      <h1 className="text-xl leading-5 lg:text-2xl lg:leading-normal font-medium text-white">
-                        WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS SCHOOL
-                      </h1>
+                      <div
+                        data-aos="fade-left"
+                        data-aos-easing="linear"
+                        data-aos-duration="1500"
+                      >
+                        <h1 className=" md:text-2xl lg:text-5xl  font-medium text-white">
+                          WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS
+                          SCHOOL
+                        </h1>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -201,13 +242,26 @@ const carousel = () => {
                       className="object-center object-cover w-full h-full"
                     />
                     <div className="pl-6 pt-6 md:-pt-5  md:pl-8 absolute left-5 top-32">
-                      <h1 className=" md:text-2xl lg:text-5xl  font-medium text-white">
-                        WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS SCHOOL
-                      </h1>
-                      <h2 className=" md:text-sm lg:text-lg mt-5 lg:leading-normal font-medium text-white">
-                        Karate is martial art and way of life that <br /> trains
-                        a practitioner to be peaceful.
-                      </h2>
+                      <div
+                        data-aos="fade-left"
+                        data-aos-easing="linear"
+                        data-aos-duration="1000"
+                      >
+                        <h1 className=" md:text-2xl lg:text-5xl  font-medium text-white">
+                          WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS
+                          SCHOOL
+                        </h1>
+                      </div>
+                      <div
+                        data-aos="fade-left"
+                        data-aos-easing="linear"
+                        data-aos-duration="2000"
+                      >
+                        <h2 className=" md:text-sm lg:text-lg mt-5 lg:leading-normal font-medium text-white">
+                          Karate is martial art and way of life that <br />
+                          trains a practitioner to be peaceful.
+                        </h2>
+                      </div>
                     </div>
                   </div>
                   <div className="relative w-full h-full lg:hidden">
@@ -217,13 +271,26 @@ const carousel = () => {
                       className="object-center object-cover w-full h-full"
                     />
                     <div className="pl-6 pt-6 md:pt-12 md:pl-8 absolute left-5 top-32">
-                      <h1 className="md:text-2xl lg:text-5xl  font-medium text-white">
-                        WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS SCHOOL
-                      </h1>
-                      <h2 className=" md:text-sm lg:text-lg mt-5 lg:leading-normal font-medium text-white">
-                        Karate is martial art and way of life that <br /> trains
-                        a practitioner to be peaceful.
-                      </h2>
+                      <div
+                        data-aos="fade-left"
+                        data-aos-easing="linear"
+                        data-aos-duration="1000"
+                      >
+                        <h1 className=" md:text-2xl lg:text-5xl  font-medium text-white">
+                          WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS
+                          SCHOOL
+                        </h1>
+                      </div>
+                      <div
+                        data-aos="fade-left"
+                        data-aos-easing="linear"
+                        data-aos-duration="2000"
+                      >
+                        <h2 className=" md:text-sm lg:text-lg mt-5 lg:leading-normal font-medium text-white">
+                          Karate is martial art and way of life that <br />
+                          trains a practitioner to be peaceful.
+                        </h2>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -237,13 +304,26 @@ const carousel = () => {
                       className="object-center object-cover w-full h-full"
                     />
                     <div className="pl-6 pt-6 md:pt-12 md:pl-8 absolute left-5 top-32">
-                      <h1 className="md:text-2xl lg:text-5xl  font-medium text-white">
-                        WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS SCHOOL
-                      </h1>
-                      <h2 className=" md:text-sm lg:text-lg mt-5 lg:leading-normal font-medium text-white">
-                        Karate is martial art and way of life that <br /> trains
-                        a practitioner to be peaceful.
-                      </h2>
+                      <div
+                        data-aos="fade-left"
+                        data-aos-easing="linear"
+                        data-aos-duration="1000"
+                      >
+                        <h1 className=" md:text-2xl lg:text-5xl  font-medium text-white">
+                          WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS
+                          SCHOOL
+                        </h1>
+                      </div>
+                      <div
+                        data-aos="fade-left"
+                        data-aos-easing="linear"
+                        data-aos-duration="2000"
+                      >
+                        <h2 className=" md:text-sm lg:text-lg mt-5 lg:leading-normal font-medium text-white">
+                          Karate is martial art and way of life that <br />
+                          trains a practitioner to be peaceful.
+                        </h2>
+                      </div>
                     </div>
                   </div>
                   <div className="relative w-full h-full lg:hidden">
@@ -253,13 +333,26 @@ const carousel = () => {
                       className="object-center object-cover w-full h-full"
                     />
                     <div className="pl-6 pt-6 md:pt-12 md:pl-8 absolute left-5 top-32">
-                      <h1 className="md:text-2xl lg:text-5xl  font-medium text-white">
-                        WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS SCHOOL
-                      </h1>
-                      <h2 className=" md:text-sm lg:text-lg mt-5 lg:leading-normal font-medium text-white">
-                        Karate is martial art and way of life that <br /> trains
-                        a practitioner to be peaceful.
-                      </h2>
+                      <div
+                        data-aos="fade-left"
+                        data-aos-easing="linear"
+                        data-aos-duration="1000"
+                      >
+                        <h1 className=" md:text-2xl lg:text-5xl  font-medium text-white">
+                          WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS
+                          SCHOOL
+                        </h1>
+                      </div>
+                      <div
+                        data-aos="fade-left"
+                        data-aos-easing="linear"
+                        data-aos-duration="2000"
+                      >
+                        <h2 className=" md:text-sm lg:text-lg mt-5 lg:leading-normal font-medium text-white">
+                          Karate is martial art and way of life that <br />
+                          trains a practitioner to be peaceful.
+                        </h2>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -273,13 +366,26 @@ const carousel = () => {
                       className="object-center object-cover w-full h-full"
                     />
                     <div className="pl-6 pt-6 md:pt-12 md:pl-8 absolute left-5 top-32">
-                      <h1 className="md:text-2xl lg:text-5xl  font-medium text-white">
-                        WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS SCHOOL
-                      </h1>
-                      <h2 className=" md:text-sm lg:text-lg mt-5 lg:leading-normal font-medium text-white">
-                        Karate is martial art and way of life that <br /> trains
-                        a practitioner to be peaceful.
-                      </h2>
+                      <div
+                        data-aos="fade-left"
+                        data-aos-easing="linear"
+                        data-aos-duration="1000"
+                      >
+                        <h1 className=" md:text-2xl lg:text-5xl  font-medium text-white">
+                          WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS
+                          SCHOOL
+                        </h1>
+                      </div>
+                      <div
+                        data-aos="fade-left"
+                        data-aos-easing="linear"
+                        data-aos-duration="2000"
+                      >
+                        <h2 className=" md:text-sm lg:text-lg mt-5 lg:leading-normal font-medium text-white">
+                          Karate is martial art and way of life that <br />
+                          trains a practitioner to be peaceful.
+                        </h2>
+                      </div>
                     </div>
                   </div>
                   <div className="relative w-full h-full lg:hidden">
@@ -289,13 +395,26 @@ const carousel = () => {
                       className="object-center object-cover w-full h-full"
                     />
                     <div className="pl-6 pt-6 md:pt-12 md:pl-8 absolute left-5 top-32">
-                      <h1 className="md:text-2xl lg:text-5xl  font-medium text-white">
-                        WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS SCHOOL
-                      </h1>
-                      <h2 className=" md:text-sm lg:text-lg mt-5 lg:leading-normal font-medium text-white">
-                        Karate is martial art and way of life that <br /> trains
-                        a practitioner to be peaceful.
-                      </h2>
+                      <div
+                        data-aos="fade-left"
+                        data-aos-easing="linear"
+                        data-aos-duration="1000"
+                      >
+                        <h1 className=" md:text-2xl lg:text-5xl  font-medium text-white">
+                          WELCOME TO <br /> KARATE AND MARTIAL <br /> ARTS
+                          SCHOOL
+                        </h1>
+                      </div>
+                      <div
+                        data-aos="fade-left"
+                        data-aos-easing="linear"
+                        data-aos-duration="2000"
+                      >
+                        <h2 className=" md:text-sm lg:text-lg mt-5 lg:leading-normal font-medium text-white">
+                          Karate is martial art and way of life that <br />
+                          trains a practitioner to be peaceful.
+                        </h2>
+                      </div>
                     </div>
                   </div>
                 </div>
